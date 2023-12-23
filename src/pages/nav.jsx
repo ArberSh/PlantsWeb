@@ -3,10 +3,21 @@ import Logo from "../assests/Logo.png"
 import "./nav.css"
 import LogoCart from "../assests/Cart.svg"
 import axios from "axios"
+import Search from "../assests/Search.svg"
 
 
-    const [data, setData] = useState(null);
-    useEffect(() => {
+
+
+function Nav() {
+    
+    //  useEffect(() => {
+        //      setData("scaring")
+        //     console.log(data)
+        // }, [data])
+        
+        
+const [data, setData] = useState("");
+        useEffect(() => {
         async function fetchData() {
             try {
                 const response = await axios.get(`https://perenual.com/api/species-list?key=sk-Om6T64c55486c6e241704`);
@@ -15,13 +26,10 @@ import axios from "axios"
                 console.error("Error fetching data:", error);
             }
         }
-        
         fetchData();
-    }, []);
+        
+    }, [data]);
     console.log(data)
-
-
-function nav() {
   return (
     <nav>
       <div className="Nav_Top">
@@ -32,8 +40,11 @@ function nav() {
           </figure>
         </div>
         <div className="Nav_Center">
-          <div>
-            <input className="SearchBar" type="text" placeholder="What are you looking for?" />
+          <div className="Search_Bar">
+            <input className="SearchField" type="text" placeholder="What are you looking for?" />
+            <button className="SearchButton">
+                <img src={Search} alt="" />
+            </button>
           </div>
         </div>
         <div>
@@ -54,4 +65,4 @@ function nav() {
   );
 }
 
-export default nav;
+export default Nav;
