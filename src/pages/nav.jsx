@@ -4,20 +4,26 @@ import "./nav.css"
 import LogoCart from "../assests/Cart.svg"
 import axios from "axios"
 import Search from "../assests/Search.svg"
-
-
-
+import Menu from "../assests/menu.svg"
 
 function Nav() {
-    
-    //  useEffect(() => {
-        //      setData("scaring")
-        //     console.log(data)
-        // }, [data])
-        
-        
+
+
+const [scroll,setScroll] = useState(false)
 const [data, setData] = useState("");
-        useEffect(() => {
+
+function Scroll() {
+  if (window.scrollY >= 150){
+    setScroll(true)
+  } 
+  else{
+    setScroll(false)
+  }
+}
+
+window.addEventListener("scroll",Scroll)
+
+useEffect(() => {
         async function fetchData() {
             try {
                 const response = await axios.get(`https://perenual.com/api/species-list?key=sk-Om6T64c55486c6e241704`);
@@ -30,18 +36,26 @@ const [data, setData] = useState("");
         
     }, [data]);
     console.log(data)
+
+
   return (
-    <nav>
+    <nav >
       <div className="Nav_Top">
         <div className="Row">
+          <div className="MenuButton_Container">
+        <button className="MenuButton">
+            <img src={Menu} alt="" />
+          </button>
+          </div> 
         <div className="Nav_Right">
+         
           <figure>
             <img className="Logo" src={Logo} alt="" />
           </figure>
         </div>
         <div className="Nav_Center">
           <div className="Search_Bar">
-            <input className="SearchField" type="text" placeholder="What are you looking for?" />
+            <input className={scroll ? 'SearchField_fixed' : 'SearchField'} type="text" placeholder="What are you looking for?" />
             <button className="SearchButton">
                 <img src={Search} alt="" />
             </button>
@@ -52,14 +66,12 @@ const [data, setData] = useState("");
           </div>
         </div>
         </div>
-        <div>
-            <div className="Nav_Down">
-                <h4>Shop</h4>
-                <h4>Plant Care</h4>
-                <h4>About Us</h4>
-                <h4>Contact Us</h4>
+            <div className={scroll ? 'Nav_Down_fixed active' : 'Nav_Down'}>
+                <h4 className="link__hover-effect">Shop</h4>
+                <h4 className="link__hover-effect">Plant Care</h4>
+                <h4 className="link__hover-effect">About Us</h4>
+                <h4 className="link__hover-effect">Contact Us</h4>
             </div>
-        </div>
       
     </nav>
   );

@@ -6,7 +6,11 @@
 
 nav {
   background-color: #5aab61;
+  position:fixed;
+  width: 100%;
+  z-index: 100;
 }
+
 
 .Nav_Top {
   display: flex;
@@ -21,14 +25,28 @@ nav {
   justify-content: space-around;
 }
 
+/* .MenuButton_Container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.MenuButton{
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background-color: transparent;
+} */
+
 figure {
   width: 8%;
-  margin: 2% 0 0 10%;
-  margin-right: 2rem;
+  margin-left:12% ;
 }
 
 .Logo {
-  width: 6rem;
+  width: 10rem;
+  object-fit:contain ;
   cursor: pointer;
 }
 
@@ -53,6 +71,7 @@ figure {
   border-radius: 4px 0 0 4px;
   outline: none;
   border: none;
+  transition: all 400ms;
 }
 
 .SearchButton {
@@ -74,6 +93,7 @@ figure {
   display: flex;
   justify-content: center;
   padding-bottom: 1rem;
+  transition: all ease 400ms;
 }
 
 h4 {
@@ -85,28 +105,41 @@ h4 {
   transition:all 400ms ease-out ;
 }
 
-h4:hover{
-
- text-decoration: underline;
+.link__hover-effect{
+    position: relative;
 }
 
-h4::before{
-    content: '';
-    display: block;
+.link__hover-effect::after{
+    content: "";
     position: absolute;
-    top: 8.5rem;
-    background-color: red;
-    width: 5px;
-    height: 5px;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    transition: all 300ms ease;
 }
 
-h4::after{
-    content: 'hello';
-    display: block;
-    position: absolute;
-    top: 8.5rem;
-    background-color: red;
-    width: 5px;
-    height: 5px;
+.link__hover-effect:hover:after{
+    left: 0;
+    width: 100%;
 }
 
+.Nav_Down_fixed, .Nav_Down_fixed h4{
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+}
+
+.SearchField_fixed{
+  transition: all 400ms;
+  width: 70%;
+  padding-left: 10px;
+  font-size: 16px;
+  max-width: 70rem;
+  height: 2.6rem;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  border: none;
+}

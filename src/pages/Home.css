@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.idk{
+    background-color: rgb(215, 215, 255);
+    height: 1020vh;
+}
+
+h1{
+    padding: 200px;
+}
