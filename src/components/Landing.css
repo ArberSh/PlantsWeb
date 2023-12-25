@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.SlideShow{
+    background-color: rgb(237, 251, 192);
+    padding-top: 18vh;
+    height: 120vh;
+    overflow-x: scroll;
+
+}
+
+.Slide-Container{    
+    display: flex;
+    display: grid;
+}
+
+#FirstSlide{
+    background-image: url(../assests/Main.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 82vh;
+}
+
+#SecondSlide{
+    background-image: url(../assests/TakeCare.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 82vh;
+}
+
+#ThirdSlide{
+    background-image: url(../assests/Shop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 82vh;
+}

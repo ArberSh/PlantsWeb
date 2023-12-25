@@ -12,8 +12,11 @@ function Nav() {
 const [scroll,setScroll] = useState(false)
 const [data, setData] = useState("");
 
+function openMenu(){
+  setScroll(false)
+}
 function Scroll() {
-  if (window.scrollY >= 150){
+  if (window.scrollY >= 100){
     setScroll(true)
   } 
   else{
@@ -42,9 +45,9 @@ useEffect(() => {
     <nav >
       <div className="Nav_Top">
         <div className="Row">
-          <div className="MenuButton_Container">
-        <button className="MenuButton">
-            <img src={Menu} alt="" />
+          <div className={scroll ? "MenuButton_Container fixed" : "MenuButton_Container"}>
+        <button onClick={openMenu} className="MenuButton">
+            <img src={Menu} className="MenuImg" alt="" />
           </button>
           </div> 
         <div className="Nav_Right">

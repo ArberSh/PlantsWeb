@@ -16,7 +16,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 1rem;
+  padding-top: 0.6rem;
 }
 .Row {
   width: 100%;
@@ -25,29 +25,36 @@ nav {
   justify-content: space-around;
 }
 
-/* .MenuButton_Container{
+.MenuButton_Container{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 1rem;
+  margin-left:0;
+  opacity: 0;
+  transition: all 400ms;
 }
 
 .MenuButton{
-  width: 2rem;
-  height: 2rem;
   border: none;
   background-color: transparent;
-} */
+}
+
+.MenuImg{
+  width: 1.6rem;
+  cursor:default;
+}
 
 figure {
   width: 8%;
   margin-left:12% ;
+  
 }
 
 .Logo {
   width: 10rem;
   object-fit:contain ;
   cursor: pointer;
+  transition: 2s ease;
 }
 
 .Nav_Center {
@@ -134,7 +141,7 @@ h4 {
 
 .SearchField_fixed{
   transition: all 400ms;
-  width: 70%;
+  width: 85%;
   padding-left: 10px;
   font-size: 16px;
   max-width: 70rem;
@@ -142,4 +149,14 @@ h4 {
   border-radius: 4px 0 0 4px;
   outline: none;
   border: none;
+}
+
+.MenuButton_Container.fixed{
+  transition: all 400ms;
+  opacity: 1;
+  margin-left: 1.6rem;
+}
+
+.MenuButton_Container.fixed img{
+  cursor: pointer;
 }

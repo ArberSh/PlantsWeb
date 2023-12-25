@@ -1,12 +1,11 @@
 import React from 'react'
 import './Home.css'
+import Landing from '../components/Landing.jsx'
 
 function Home() {
   return (
     <div>
-      <div className='idk'>
-        <h1>hi</h1>
-        </div>  
+      <Landing/>
     </div>
   )
 }
