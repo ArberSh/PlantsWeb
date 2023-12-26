@@ -26,19 +26,19 @@ function Scroll() {
 
 window.addEventListener("scroll",Scroll)
 
-useEffect(() => {
-        async function fetchData() {
-            try {
-                const response = await axios.get(`https://perenual.com/api/species-list?key=sk-Om6T64c55486c6e241704`);
-                setData(response.data);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        }
-        fetchData();
+// useEffect(() => {
+//         async function fetchData() {
+//             try {
+//                 const response = await axios.get(`https://perenual.com/api/species-list?key=sk-Om6T64c55486c6e241704`);
+//                 setData(response.data);
+//             } catch (error) {
+//                 console.error("Error fetching data:", error);
+//             }
+//         }
+//         fetchData();
         
-    }, [data]);
-    console.log(data)
+//     }, [data]);
+//     console.log(data)
 
 
   return (
