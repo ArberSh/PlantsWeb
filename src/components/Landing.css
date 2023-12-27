@@ -10,13 +10,10 @@ body{
 
 .SlideShow{
     background-color: rgb(237, 251, 192);
-    padding-top: 16vh;
-    height: 120vh;
+    padding-top: 6%;
+    height: 100vh;
 }
 
-.Slide-Container{
-
-}
 .Slide{
     width: 100%;
     height: 100%;
@@ -25,15 +22,15 @@ body{
 }
 
 #FirstSlide{
-    background-image: url(../assests/Main.jpg);
+    background-image:linear-gradient(to top, #011a00a2,#05600025 ) , url(../assests/Main.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 84vh;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 6rem;
+
 }
 
 .Text-Container{
@@ -49,21 +46,23 @@ body{
 }
 
 .Text-Container h1{
-    font-size: 46px;
+    font-size: 50px;
+
 }
 
 .Text-Container p{
     margin-top: 0.4rem;
     font-size: 18px;
     font-weight: bold;
+    text-align: center;
 }
 
 .Text-Container button{
-    width: 8rem;
-    height: 2.4rem;
+    width: 10rem;
+    height: 2.6rem;
     background-color: transparent;
     border: white 2px solid;
-    font-size: 17px;
+    font-size: 18px;
     margin-top: 0.8rem;
     transition: 400ms;
     cursor: pointer;
@@ -75,19 +74,25 @@ body{
 }
 
 #SecondSlide{
-    background-image: url(../assests/TakeCare.jpg);
+    background-image:linear-gradient(to top, #011a00a2,#05600025 ), url(../assests/TakeCare.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 84vh;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #ThirdSlide{
-    background-image: url(../assests/Shop.jpg);
+    background-image:linear-gradient(to top, #01190050,#02280025 ), url(../assests/Shop.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 84vh;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .arrows{

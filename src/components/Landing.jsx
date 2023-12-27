@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './Landing.css'
 import Arrow from "../assests/right-arrow.png"
 
@@ -17,11 +17,11 @@ function Landing() {
     const slideImage = () => {
         slides.forEach(
         (slide) => {
-            if(counter == 3){
+            if(counter === 3){
                 counter = 0
                 slide.style.transform = `translateX(-${counter * 100}%)`
             }
-            else if(counter == -1) {
+            else if(counter === -1) {
                 counter = 0
                 slide.style.transform = `translateX(-${counter * 100}%)`
             }
@@ -31,6 +31,16 @@ function Landing() {
         }
         )
     }
+   
+      useEffect(() => {
+        const intervalId = setInterval(() => {
+          counter++
+          slideImage()
+        }, 8000);
+        return () => {
+          clearInterval(intervalId);
+        };
+      }, []);
 
     function goPrev(){
         counter-- 
@@ -63,10 +73,18 @@ function Landing() {
             </div>
           </div>
           <div id="SecondSlide" className="Slide">
-
+          <div className="Text-Container">
+            <h1 className="title">Best Guide Plant Care</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, fugiat.</p>
+            <button>Let's Guide</button>
+            </div>
           </div>
           <div id="ThirdSlide" className="Slide">
-
+          <div className="Text-Container">
+            <h1 className="title">Subscribe for more gifts</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, fugiat.</p>
+            <button>Subscribe</button>
+            </div>
           </div>
           
         </div>

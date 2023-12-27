@@ -14,9 +14,8 @@ nav {
 
 .Nav_Top {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  padding-top: 0.6rem;
 }
 .Row {
   width: 100%;
@@ -46,24 +45,23 @@ nav {
 
 figure {
   width: 8%;
-  margin-left:12% ;
+  margin-left:0% ;
   
 }
 
 .Logo {
-  width: 10rem;
+  width: 9rem;
   object-fit:contain ;
   cursor: pointer;
   transition: 2s ease;
 }
 
 .Nav_Center {
-  width: 90%;
-  margin-top: 1.6rem;
-  align-items: center;
+  margin-top: 1.2rem;
 }
 
 .Search_Bar {
+  width: 70rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,7 +97,7 @@ figure {
 .Nav_Down {
   display: flex;
   justify-content:space-evenly;
-  padding-bottom: 1rem;
+  padding-bottom: 0.6rem;
   transition: all ease 400ms;
 }
 
