@@ -1,3 +1,15 @@
 .AboutUs{
     height: 60vh;
 }
+.AboutUs_Container{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ShortDescription_Container{
+    border: red 1px solid;
+    width: 20%;
+    height: 50vh;
+}
