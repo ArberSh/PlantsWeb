@@ -35,7 +35,7 @@ function Landing() {
         const intervalId = setInterval(() => {
           counter++
           slideImage()
-        }, 8000);
+        }, 10000);
         return () => {
           clearInterval(intervalId);
         };

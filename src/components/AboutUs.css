@@ -1,15 +1,32 @@
 .AboutUs{
-    height: 60vh;
+    height: 50vh;
 }
 .AboutUs_Container{
-    margin-top: 4rem;
+
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
 .ShortDescription_Container{
-    border: red 1px solid;
     width: 20%;
     height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ShortDescription_Container img{
+    width: 34%;
+}
+
+.ShortDescription_Container h3{
+    font-size: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.green{
+    color: rgb(0, 179, 0);
 }
