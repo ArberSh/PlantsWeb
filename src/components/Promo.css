@@ -1,3 +1,47 @@
 .Promo{
-    
+    height: 100vh;
+    background-color: gray;
+}
+
+.Promo_Container{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.FirstPromo{
+    background-image: url(../assests/Accessories.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 10rem;
+}
+.SecondPromo{
+    background-image: url(../assests/Seeds.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ThirdPromo{
+    background-image: url(../assests/GiftPlant.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 10rem;
+}
+.ForthPromo{
+    background-image: url(../assests/NewArrivals.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.FifthPromo{
+    background-image: url(../assests/Shipping.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.grid-col-span-2 {
+    grid-column: span 2;
 }

@@ -5,7 +5,7 @@ function Promo() {
   return (
     <div className="Promo">
       <div className="Promo_Container">
-        <div className="FirstPromo">
+        <div className="FirstPromo grid-col-span-2">
           <h1>House Plant Accessories</h1>
           <button>Shop Accessories</button>
         </div>
@@ -13,7 +13,7 @@ function Promo() {
           <h1>Promotional Item</h1>
           <button>Shop Gift Card</button>
         </div>
-        <div className="ThirdPromo">
+        <div className="ThirdPromo grid-col-span-2">
           <h1>New Arrivals</h1>
           <button>Shop Now</button>
         </div>
