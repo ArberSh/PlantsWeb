@@ -1,47 +1,121 @@
 .Promo{
     height: 100vh;
-    background-color: gray;
+    padding: 0 4rem;
+    margin-bottom: 6rem;
 }
 
 .Promo_Container{
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6,1fr);
 }
 
 .FirstPromo{
-    background-image: url(../assests/Accessories.jpg);
+    background-image:linear-gradient(to top, #36363641,#3d3d3d1a  ) , url(../assests/Accessories.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 10rem;
+    height: 24rem;
+    padding: 2rem;
+    display: flex;
+    align-items: end;
 }
 .SecondPromo{
-    background-image: url(../assests/Seeds.jpg);
+    background-image:linear-gradient(to top, #36363641,#3d3d3d1a  ) , url(../assests/NewArrivals.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    height: 24rem;
+    padding: 2rem;
+    display: flex;
+    align-items: end;
+
 }
 .ThirdPromo{
-    background-image: url(../assests/GiftPlant.jpg);
+    background-image:linear-gradient(to top, #36363641,#3d3d3d1a  ) , url(../assests/Seeds.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 10rem;
+    padding: 2rem;
+    display: flex;
+    align-items: end;
 }
 .ForthPromo{
-    background-image: url(../assests/NewArrivals.jpg);
+    background-image:linear-gradient(to top, #36363641,#3d3d3d1a  ) , url(../assests/GiftPlant.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    padding: 2rem;
+    display: flex;
+    align-items: end;
+
 }
 .FifthPromo{
-    background-image: url(../assests/Shipping.jpg);
+    background-image:linear-gradient(to top, #36363641,#3d3d3d1a  ),url(../assests/Shipping.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    padding: 2rem;
+    display: flex;
+    align-items: end;
 }
 
 .grid-col-span-2 {
-    grid-column: span 2;
+    grid-column-start: 1;
+    grid-column-end:3;
+    grid-row-start:1 ;
+    grid-row-end:4 ;
+
+}
+
+.grid-col-span-4 {
+    grid-column-start: 1;
+    grid-column-end:3;
+    grid-row-start:4 ;
+    grid-row-end:7 ;
+}
+
+.grid-col-span-1{
+    grid-column-start: 3;
+    grid-column-end:4;
+}
+
+.grid-row-1{
+    grid-row-start:1;
+    grid-row-end:3;
+}
+.grid-row-2{
+    grid-row-start:3;
+    grid-row-end:5;
+}
+
+.grid-row-3{
+    grid-row-start:5;
+    grid-row-end:7;
+}
+
+.PromoText_Container{
+    text-align: right;
+    margin-left: auto;
+}
+
+.PromoText_Container h1{
+    color: white;
+}
+
+.PromoText_Container button{
+    height: 2.6rem;
+    border: none;
+    border-radius: 6px;
+    background-color: white;
+    color: green;
+    padding: 0 1rem;
+    font-size: 18px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.forButton button{
+    font-size: 16px;
 }
