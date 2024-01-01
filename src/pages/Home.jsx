@@ -3,6 +3,7 @@ import './Home.css'
 import Landing from '../components/Landing.jsx'
 import AboutUs from '../components/AboutUs.jsx'
 import Promo from '../components/Promo.jsx'
+import Subscription from '../components/Subscription.jsx'
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
       <Landing/>
       <AboutUs/>
       <Promo/>
+      <Subscription/>
     </div>
   )
 }

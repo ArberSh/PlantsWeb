@@ -1,0 +1,91 @@
+.Subscriptions{
+    margin: 10rem 2rem 6rem 2rem;
+    text-align: center;
+}
+
+.green1{
+   color: rgb(95, 203, 58);
+}
+
+.mid-line{
+    text-decoration:line-through;
+    color: rgba(0, 0, 0, 0.583);
+}
+
+.SubscriptionTitle{
+    margin: 2rem 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.Subscription_Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Subscription{
+    width: 24rem;
+    height: 100%;
+    max-height: 36rem;
+    box-shadow: 10px 8px 20px rgba(72, 72, 72, 0.567);
+    border-radius: 8px;
+    padding: 2rem;
+    border: rgb(95, 203, 58) 2px solid;
+    margin: 0 2rem;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+
+.Subscription h1,.Subscription h2,.Subscription h3 {
+    text-align: center;
+}
+
+.Subscription h1{
+    font-size: 40px;
+    margin-top: 1rem;
+    color: rgb(95, 203, 58);
+}
+
+.Subscription h3{
+    color: rgb(95, 203, 58);
+}
+
+ul{
+    margin: 1.4rem 0 1rem 0;
+}
+
+.Subscription li{
+    font-size: 18px;
+    margin-top: 0.6rem;
+    list-style-type: none;
+    font-weight: bold;
+}
+
+.NotOwned{
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(95, 203, 58);
+    border: rgb(95, 203, 58) 2px solid;
+    cursor: pointer;
+}   
+
+.Owned{
+    border: white 2px solid;
+    background-color:rgb(95, 203, 58);
+    color: white;
+}
+
+.Subscription button{
+    width: 8rem;
+    height: 2.6rem;
+    margin-top: 10%;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 400ms;
+}
+
+.NotOwned:hover{
+    border: white 2px solid;
+    background-color:rgb(95, 203, 58);
+    color: white;
+}
+
+
