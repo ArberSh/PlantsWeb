@@ -3,7 +3,7 @@ import './Subscription.css'
 
 function Subscription() {
   return (
-    <div className='Subscriptions'>
+    <div id='Subscriptions'>
         <h1 className='SubscriptionTitle'>Subscription</h1>
         <div className='Subscription_Container'>
             <div className='Subscription Free'>

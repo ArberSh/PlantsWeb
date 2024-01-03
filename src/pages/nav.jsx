@@ -70,11 +70,11 @@ window.addEventListener("scroll",Scroll)
         </div>
         </div>
             <div className={scroll ? 'Nav_Down_fixed active' : 'Nav_Down'}>
-                <h4 className="link__hover-effect">Shop</h4>
-                <h4 className="link__hover-effect">Plant Care</h4>
-                <h4 className="link__hover-effect">Subscribe</h4>
-                <h4 className="link__hover-effect">About Us</h4>
-                <h4 className="link__hover-effect">Contact Us</h4>
+                <a href="#" className="link__hover-effect">Shop</a>
+                <a className="link__hover-effect">Plant Care</a>
+                <a href="#Subscription" className="link__hover-effect">Subscribe</a>
+                <a className="link__hover-effect">About Us</a>
+                <a className="link__hover-effect">Contact Us</a>
             </div>
       
     </nav>
