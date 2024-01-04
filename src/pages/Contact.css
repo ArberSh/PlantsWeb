@@ -1,0 +1,50 @@
+.Contact{
+    background-color: green;
+    color: white;
+    padding: 4rem 2rem;
+}
+
+.Contact_Container{
+    display: flex;
+    justify-content:space-around;
+    align-items:start;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Contact_Container h1{
+    margin-bottom: 1rem;
+    font-size: 20px;
+}
+
+.miniform {
+    margin-top: 1rem;
+} 
+
+.miniform input{
+    border-radius: 2px;
+    padding-left: 6px;
+    height: 2rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.miniform button{
+    width: 4rem;
+    height: 2rem;
+    border: none;
+    background-color: rgb(27, 177, 0);
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.EmailContact{
+    width: 20rem;
+}
+
+.EmailContact p {
+    margin-bottom: 0.5rem;
+}
+

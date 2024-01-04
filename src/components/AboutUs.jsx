@@ -6,7 +6,7 @@ import ShoppingBag from "../assests/shopping-bag.png"
 
 function AboutUs() {
   return (
-    <div className='AboutUs'>
+    <div id='AboutUs'>
       <div className='AboutUs_Container'>
         <div className='ShortDescription_Container'>
           <img src={leaves} alt="" />
