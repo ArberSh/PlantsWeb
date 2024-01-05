@@ -1,55 +1,61 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import './Landing.css'
 import Arrow from "../assests/right-arrow.png"
 
 function Landing() {
 
     const slides = document.querySelectorAll(".Slide")
-    let counter = 0 
-    slides.forEach(
+    const [counter,setCounter] = useState(0) 
+
+
+
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        setCounter((counter) => (counter = 1 + counter ))
+        if(counter <= 3 || counter >= -1){
+          setCounter(0)
+        }
+        slideImage()
+        console.log(counter)
+      }, 10000);
+      return () => {
+        clearInterval(intervalId);
+      };
+    }, []);
+
+  function goPrev(){
+      setCounter((counter) => (counter = 1 - counter )) 
+      slideImage()
+      console.log(counter)
+
+  }
+
+  function goNext(){
+      setCounter((counter) => (counter = 1 + counter ))
+      slideImage()
+      console.log(counter)
+
+  }
+
+      slides.forEach(
         (slide,index) => {
             slide.style.left = `${index * 100}%`
         }
     )
 
+    
+
     const slideImage = () => {
         slides.forEach(
         (slide) => {
-            if(counter === 3){
-                counter = 0
                 slide.style.transform = `translateX(-${counter * 100}%)`
-                //Vure kohen ktu qe tket nje pauze
-            }
-            else if(counter === -1) {
-                counter = 0
-                slide.style.transform = `translateX(-${counter * 100}%)`
-            }
-            else{
-                slide.style.transform = `translateX(-${counter * 100}%)`
-            }
+                console.log(counter)
         }
         )
+      
+        
     }
    
-      useEffect(() => {
-        const intervalId = setInterval(() => {
-          counter++
-          slideImage()
-        }, 10000);
-        return () => {
-          clearInterval(intervalId);
-        };
-      }, []);
-
-    function goPrev(){
-        counter-- 
-        slideImage()
-    }
-
-    function goNext(){
-        counter++ 
-        slideImage()
-    }
 
   return (
     <>
