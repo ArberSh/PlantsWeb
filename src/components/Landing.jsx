@@ -9,53 +9,34 @@ function Landing() {
 
 
 
-    useEffect(() => {
-      const intervalId = setInterval(() => {
-        setCounter((counter) => (counter = 1 + counter ))
-        if(counter <= 3 || counter >= -1){
-          setCounter(0)
-        }
-        slideImage()
-        console.log(counter)
-      }, 10000);
-      return () => {
-        clearInterval(intervalId);
-      };
-    }, []);
+    // useEffect(() => {
+    //   const intervalId = setInterval(() => {
+    //     setCounter((counter) => (counter++))
+    //     slideImage()
+    //     console.log(counter + " time ")
+    //   }, 2000);
+    //   return () => {
+    //     clearInterval(intervalId);
+    //   };
+    // }, []);
 
-  function goPrev(){
-      setCounter((counter) => (counter = 1 - counter )) 
-      slideImage()
-      console.log(counter)
-
-  }
-
-  function goNext(){
-      setCounter((counter) => (counter = 1 + counter ))
-      slideImage()
-      console.log(counter)
-
-  }
-
-      slides.forEach(
+  
+useEffect(() => {
+  slides.forEach(
         (slide,index) => {
+          slide.style.transform = `translateX(-${0 * 100}%)`
             slide.style.left = `${index * 100}%`
         }
     )
+},[])
+      
 
     
 
-    const slideImage = () => {
-        slides.forEach(
-        (slide) => {
-                slide.style.transform = `translateX(-${counter * 100}%)`
-                console.log(counter)
-        }
-        )
-      
-        
-    }
-   
+    
+    
+// slide.style.transform = `translateX(-${counter * 100}%)`
+
 
   return (
     <>
@@ -63,10 +44,10 @@ function Landing() {
         
         <div className="Slide-Container">
             <div className="arrows">
-            <button style={{marginLeft:"2rem"}} onClick={goPrev} className="arrow">
+            <button style={{marginLeft:"2rem"}}  className="arrow">
                <img className="arrowImg" src={Arrow} style={{transform:"rotate(180deg)"}} alt="" />
             </button>
-            <button style={{marginRight:"2rem"}} onClick={goNext} className="arrow">
+            <button style={{marginRight:"2rem"}}  className="arrow">
                 <img className="arrowImg" src={Arrow} alt="" />
             </button>
           </div>
