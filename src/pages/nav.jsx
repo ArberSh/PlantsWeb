@@ -53,7 +53,7 @@ window.addEventListener("scroll",Scroll)
         <div className="Nav_Right">
          
           <figure>
-            <a href="#">
+            <a href="/">
             <img className="Logo" src={Logo} alt="" />
             </a>
           </figure>
@@ -72,7 +72,7 @@ window.addEventListener("scroll",Scroll)
         </div>
         </div>
             <div className={scroll ? 'Nav_Down_fixed active' : 'Nav_Down'}>
-                <a href="#" className="link__hover-effect">Shop</a>
+                <a href="/shop" className="link__hover-effect">Shop</a>
                 <a className="link__hover-effect">Plant Care</a>
                 <a href="#Subscriptions" className="link__hover-effect">Subscribe</a>
                 <a href="#AboutUs" className="link__hover-effect">About Us</a>
