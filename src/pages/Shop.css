@@ -12,12 +12,31 @@
     flex-direction: column;
 }
 
-.Filter input[type="radio"]{
+/* Add this to your existing stylesheet or create a new one */
+.square {
+    width: 20px; /* Adjust the width of the square */
+    height: 20px; /* Adjust the height of the square */
+    border: 2px solid #3498db; /* Border color of the square */
+    display: inline-block;
+    position: relative;
+    margin-right: 10px; /* Adjust the spacing between the square and label */
+  }
+  
+  input[type="radio"] {
+    position: absolute;
     opacity: 0;
-    position: fixed;
-    width: 0;
-}
-
-.Filter label{
-    display: inline;
-}
+    cursor: pointer;
+  }
+  
+  input[type="radio"]:checked + .square::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px; /* Adjust the size of the inner square for checked state */
+    height: 10px;
+    background-color: #3498db; /* Color of the inner square for checked state */
+    border-radius: 50%;
+  }
+  
