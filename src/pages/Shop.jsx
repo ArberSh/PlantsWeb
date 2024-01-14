@@ -10,7 +10,7 @@ function Shop() {
     async function fetchPosts() {
       try {
         const { data } = await axios.get(
-          `https://perenual.com/api/species-list?key=sk-LPx165a266de2b29d3764`
+          `https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704`
         );
         setData(data.data);
       } catch (error) {
@@ -84,9 +84,15 @@ function Shop() {
         </div>
         <div className="Plants_Container">
           <div>
-              {dataPlant.map((element) => (
-                <Plants key={element.id} data={element} />
-              ))}
+          {Array.isArray(dataPlant) ? ( //duhet t vendosesh si kusht pasi nuk afisho direkt api.
+              dataPlant.map((element) => (
+                <div key={element.idMeal}>
+                  <Plants data={element} />
+                </div>
+              ))
+            ) : (
+              <p>Data is not an array.</p>
+            )}
           </div>
         </div>
       </div>
