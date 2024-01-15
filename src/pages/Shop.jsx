@@ -21,7 +21,7 @@ function Shop() {
   }, []);
 
   useEffect(() => {
-    console.log(dataPlant);
+    
   }, [dataPlant]);
 
   return (
@@ -85,7 +85,7 @@ function Shop() {
         <div className="Plants_Container">
           <div>
           {Array.isArray(dataPlant) ? ( //duhet t vendosesh si kusht pasi nuk afisho direkt api.
-              dataPlant.map((element) => (
+              dataPlant.map((element) => (//ktu beje filter
                 <div key={element.idMeal}>
                   <Plants data={element} />
                 </div>
