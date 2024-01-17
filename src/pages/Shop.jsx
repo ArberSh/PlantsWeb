@@ -84,15 +84,21 @@ function Shop() {
         </div>
         <div className="Plants_Container">
           <div>
-          {Array.isArray(dataPlant) ? ( //duhet t vendosesh si kusht pasi nuk afisho direkt api.
-              dataPlant.map((element) => (//ktu beje filter
-                <div key={element.idMeal}>
-                  <Plants data={element} />
-                </div>
-              ))
-            ) : (
-              <p>Data is not an array.</p>
-            )}
+          {Array.isArray(dataPlant) 
+          ? 
+          (
+            dataPlant.map(element => element.default_image===null)).filter(filteredData => (
+                <div key={filteredData.id}>
+                   {console.log("works")}
+                 </div> 
+            ))         
+          : 
+          (
+            <p>Not Working</p>
+          )
+        }
+
+              
           </div>
         </div>
       </div>
@@ -101,3 +107,14 @@ function Shop() {
 }
 
 export default Shop;
+
+
+// {Array.isArray(dataPlant) ? ( //duhet t vendosesh si kusht pasi nuk afisho direkt api.
+//               dataPlant.map((element) => (//ktu beje filter
+//                 <div key={element.idMeal}>
+//                   <Plants data={element} />
+//                 </div>
+//               ))
+//             ) : (
+//               <p>Data is not an array.</p>
+//             )}
