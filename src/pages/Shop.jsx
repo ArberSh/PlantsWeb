@@ -87,11 +87,13 @@ function Shop() {
           {Array.isArray(dataPlant) 
           ? 
           (
-            dataPlant.map(element => element.default_image===null)).filter(filteredData => (
-                <div key={filteredData.id}>
-                   {console.log("works")}
-                 </div> 
-            ))         
+            dataPlant.filter(elem => elem.default_image !== null )
+            .map((filteredData) => {
+                <div>
+                    <Plants/>
+                </div>
+            })
+                )                     
           : 
           (
             <p>Not Working</p>
