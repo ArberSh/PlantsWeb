@@ -82,18 +82,16 @@ function Shop() {
             </div>
           </div>
         </div>
-        <div className="Plants_Container">
-          <div>
+        <div className="Plants">
           {Array.isArray(dataPlant) 
           ? 
           (
             dataPlant.filter(elem => elem.default_image !== null )
-            .map((filteredData) => {
-                <div>
-                    <Plants/>
-                </div>
-            })
-                )                     
+            .map((filteredData) => (
+                 <div className="Plants_Container" key={filteredData.id}>
+                   <Plants data={filteredData} />
+                 </div>
+               )))                     
           : 
           (
             <p>Not Working</p>
@@ -101,7 +99,6 @@ function Shop() {
         }
 
               
-          </div>
         </div>
       </div>
     </div>

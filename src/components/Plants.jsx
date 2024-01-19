@@ -6,7 +6,7 @@ function Plants({data}) {
     <div>
         <div className='Plant_Container '>
           <div>
-            <img src={Image} alt="" />
+            <img src={data.default_image.thumbnail} alt="" />
           </div>
           <div className='Text_Container'>
             <h1 className='price'>$15.99</h1>
