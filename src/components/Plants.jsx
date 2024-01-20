@@ -5,7 +5,7 @@ function Plants({data}) {
   return (
     <div>
         <div className='Plant_Container '>
-          <div>
+          <div className='Image_Plant'>
             <img src={data.default_image.thumbnail} alt="" />
           </div>
           <div className='Text_Container'>
