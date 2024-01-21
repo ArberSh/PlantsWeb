@@ -31,44 +31,44 @@ function Shop() {
           <h1>Filter</h1>
           <div className="Filter type">
             <h2>Type</h2>
-            <div>
+            <div className="Input_Container">
               <input type="radio" name="type" value="tree" />
               <label>Tree</label>
             </div>
-            <div>
+            <div className="Input_Container">
               <input type="radio" name="type" value="flowers" />
               <label>Flowers</label>
             </div>
           </div>
           <div className="Filter Caring">
             <h2>Caring</h2>
-            <div>
+            <div className="Input_Container">
               <input type="radio" name="care" value="easycare" />
               <label>Easy-Care</label>
             </div>
-            <div>
+            <div className="Input_Container">
               <input type="radio" name="care" value="mediumcare" />
               <label>Medium-Care</label>
             </div>
           </div>
           <div className="Filter SunLight">
             <h2>SunLight</h2>
-            <div>
+            <div className="Input_Container">
               <input type="radio" name="sunlight" value="full-sun" />
               <label>Full Sun</label>
             </div>
-            <div>
+            <div className="Input_Container">
               <input type="radio" name="sunlight" value="low-sun" />
               <label>Low Sun</label>
             </div>
           </div>
           <div className="Filter Watery">
             <h2>Watery</h2>
-            <div>
+            <div className="Input_Container">
               <input type="radio" name="watery" value="Frequent" />
               <label>Low Sun</label>
             </div>
-            <div>
+            <div className="Input_Container">
               <input type="radio" name="watery" value="Average" />
               <label>Average</label>
             </div>
