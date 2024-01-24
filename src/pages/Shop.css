@@ -73,10 +73,20 @@
 
 
 .Plants{
-    margin: 0 2rem 2rem 2rem;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.Plants_Container{
+    margin: 0 2rem 2rem 2rem;    
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(4, 1fr);
+    flex-wrap: wrap;
+  }
+
+.Plants_Container--ForPlants{
+  margin: 1rem;
 }

@@ -13,8 +13,8 @@ function Plants({data}) {
             <h4>{data.common_name}</h4>
           </div>
           <div className='Button_Container'>
-            <button>More Info</button>
-            <button>Add to Cart</button>
+            <button className='MoreInfo'>More Info</button>
+            <button className='AddtoCart'>Add to Cart</button>
           </div>
         </div>
     </div>
