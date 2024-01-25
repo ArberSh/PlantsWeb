@@ -34,11 +34,12 @@
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-around;
 }
 
 .Button_Container button{
-    width: 6rem;
-    height: 2.4rem;
+    width: 6.6rem;
+    height: 2.2rem;
     color: black;
     font-size: 16px;
     background-color: white;

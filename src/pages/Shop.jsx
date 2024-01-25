@@ -20,9 +20,7 @@ function Shop() {
     fetchPosts();
   }, []);
 
-  useEffect(() => {
-    
-  }, [dataPlant]);
+  useEffect(() => {}, [dataPlant]);
 
   return (
     <div className="Shop">
@@ -74,33 +72,41 @@ function Shop() {
             </div>
           </div>
         </div>
-        <div className="Plants">
-        <div className="Plants_Container">
-          {Array.isArray(dataPlant) 
-          ? 
-          (
-            dataPlant.filter(elem => elem.default_image !== null )
-            .map((filteredData) => (
-                 <div className="Plants_Container--ForPlants" key={filteredData.id}>
-                   <Plants data={filteredData} />
-                 </div>
-               )))                     
-          : 
-          (
-            <p>Not Working</p>
-          )
-        }
-
-              
+        <div className="Plants1">
+          <div className="SortBy-Container">
+            <h1>Plants</h1>
+            <div className="SortBy">
+              <label>Sort By</label>
+              <select id="FilterSortBy">
+                <option value="Featured">Featured</option>
+                <option value="A-Z">Alphabetically A-Z</option>
+                <option value="Z-A">Alphabetically Z-A</option>
+              </select>
+            </div>
+          </div>
+          <div className="Plants_Container">
+            {Array.isArray(dataPlant) ? (
+              dataPlant
+                .filter((elem) => elem.default_image !== null && elem.id < 25)
+                .map((filteredData) => (
+                  <div
+                    className="Plants_Container--ForPlants"
+                    key={filteredData.id}
+                  >
+                    <Plants data={filteredData} />
+                  </div>
+                ))
+            ) : (
+              <p>Not Working</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
-  </div>
   );
 }
 
 export default Shop;
-
 
 // {Array.isArray(dataPlant) ? ( //duhet t vendosesh si kusht pasi nuk afisho direkt api.
 //               dataPlant.map((element) => (//ktu beje filter
