@@ -72,7 +72,7 @@ function Shop() {
             </div>
           </div>
         </div>
-        <div className="Plants1">
+        <div className="Plants">
           <div className="SortBy-Container">
             <h1>Plants</h1>
             <div className="SortBy">
