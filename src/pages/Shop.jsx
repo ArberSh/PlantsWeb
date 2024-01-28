@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../pages/Shop.css";
 import Plants from "../components/Plants";
-import DATA from "../data.json";
 import axios from "axios";
 
 function Shop() {
@@ -10,9 +9,11 @@ function Shop() {
     async function fetchPosts() {
       try {
         const { data } = await axios.get(
-          `https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704`
+          `https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704&page=${3}`
         );
         setData(data.data);
+        
+        
       } catch (error) {
         console.log("Error", error);
       }
@@ -74,9 +75,9 @@ function Shop() {
         </div>
         <div className="Plants">
           <div className="SortBy-Container">
-            <h1>Plants</h1>
-            <div className="SortBy">
-              <label>Sort By</label>
+            <h1 style={{fontSize:"36px",marginLeft:"1rem"}}>Plants</h1>
+            <div className="SortBy" style={{marginRight:"4rem"}}>
+              <label style={{fontSize:"20px",marginRight:"1rem"}}>Sort By</label>
               <select id="FilterSortBy">
                 <option value="Featured">Featured</option>
                 <option value="A-Z">Alphabetically A-Z</option>
@@ -87,7 +88,7 @@ function Shop() {
           <div className="Plants_Container">
             {Array.isArray(dataPlant) ? (
               dataPlant
-                .filter((elem) => elem.default_image !== null && elem.id < 25)
+                .filter((elem) => elem.default_image !== null || elem.default_image === undefined )
                 .map((filteredData) => (
                   <div
                     className="Plants_Container--ForPlants"
@@ -100,8 +101,16 @@ function Shop() {
               <p>Not Working</p>
             )}
           </div>
-        </div>
       </div>
+        </div>
+        <div className="Page_Container">
+              <button className="green1">Preview </button>
+              <button className="green1">1</button>
+              <button className="green1">2</button>
+              <button className="green1">3</button>
+              <button className="green1">4</button>
+              <button className="green1">Next</button>
+        </div>
     </div>
   );
 }
