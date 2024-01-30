@@ -13,7 +13,7 @@
 
 .Filter_Container{
   display: flex;
-  align-items: center;
+  margin-left: 2rem;
   flex-direction: column;
   width: 14%;
 }

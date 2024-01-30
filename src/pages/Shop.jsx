@@ -6,10 +6,10 @@ import axios from "axios";
 function Shop() {
   const [dataPlant, setData] = useState("");
   useEffect(() => {
-    async function fetchPosts() {
+    async function fetchPosts(number) {
       try {
         const { data } = await axios.get(
-          `https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704&page=${3}`
+          `https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704&page=${number}`
         );
         setData(data.data);
         
@@ -20,6 +20,13 @@ function Shop() {
     }
     fetchPosts();
   }, []);
+
+   function Button(event){
+    const [number,setNumber] = useState(0)
+    setNumber(event.target.value)
+    console.log(number)
+  }
+
 
   useEffect(() => {}, [dataPlant]);
 
@@ -104,12 +111,12 @@ function Shop() {
       </div>
         </div>
         <div className="Page_Container">
-              <button className="green1">Preview </button>
-              <button className="green1">1</button>
-              <button className="green1">2</button>
-              <button className="green1">3</button>
-              <button className="green1">4</button>
-              <button className="green1">Next</button>
+              <button onClick={Button} className="green1">Preview </button>
+              <button onClick={Button} value="1" className="green1">1</button>
+              <button onClick={Button} value="2" className="green1">2</button>
+              <button onClick={Button} value="3" className="green1">3</button>
+              <button onClick={Button} value="4" className="green1">4</button>
+              <button onClick={Button} className="green1">Next</button>
         </div>
     </div>
   );
