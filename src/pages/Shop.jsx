@@ -5,6 +5,7 @@ import axios from "axios";
 
 function Shop() {
   const [dataPlant, setData] = useState("");
+  const [number,setNumber] = useState(0)
   useEffect(() => {
     async function fetchPosts(number) {
       try {
@@ -22,9 +23,11 @@ function Shop() {
   }, []);
 
    function Button(event){
-    const [number,setNumber] = useState(0)
-    setNumber(event.target.value)
-    console.log(number)
+    useEffect(() => {
+      setNumber(event.target.value);
+      console.log(number);
+    }, [event.target.value]);
+    
   }
 
 
@@ -111,12 +114,12 @@ function Shop() {
       </div>
         </div>
         <div className="Page_Container">
-              <button onClick={Button} className="green1">Preview </button>
+              <button onClick={Button} value="Preview" className="green1">Preview </button>
               <button onClick={Button} value="1" className="green1">1</button>
               <button onClick={Button} value="2" className="green1">2</button>
               <button onClick={Button} value="3" className="green1">3</button>
               <button onClick={Button} value="4" className="green1">4</button>
-              <button onClick={Button} className="green1">Next</button>
+              <button onClick={Button} value="Next" className="green1">Next</button>
         </div>
     </div>
   );
