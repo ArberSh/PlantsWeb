@@ -20,15 +20,15 @@ function Shop() {
       }
     }
     fetchPosts();
-  }, []);
+  }, [number]);
 
-   function Button(event){
-    useEffect(() => {
+   const Button = (event) =>{
       setNumber(event.target.value);
-      console.log(number);
-    }, [event.target.value]);
+    };
     
-  }
+  useEffect(() => {
+    console.log(number)
+  },[number])
 
 
   useEffect(() => {}, [dataPlant]);
