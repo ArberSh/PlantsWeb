@@ -6,6 +6,7 @@ import axios from "axios";
 function Shop() {
   const [dataPlant, setData] = useState("");
   const [number,setNumber] = useState(0)
+  const [newnumber,setnewNumber] = useState(0)
   useEffect(() => {
     async function fetchPosts(number) {
       try {
@@ -13,24 +14,31 @@ function Shop() {
           `https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704&page=${number}`
         );
         setData(data.data);
-        
-        
       } catch (error) {
         console.log("Error", error);
       }
     }
-    fetchPosts();
+    fetchPosts(number);
   }, [number]);
 
-   const Button = (event) =>{
-      setNumber(event.target.value);
+   function Button (e){
+      if(e.target.value === 'Preview' || e.target.value === 'Next'){
+      if(e.target.value === 'Preview'){
+        console.log('Preview')
+        setNumber((number) => ( number - 1))
+        console.log(number)
+      }
+      else{
+        console.log('Next')
+        setNumber((number) => ( number + 1))
+        console.log(number)
+      }
+      }
+    else{
+        setNumber(e.target.value)
+        console.log(number)
+      }
     };
-    
-  useEffect(() => {
-    console.log(number)
-  },[number])
-
-
   useEffect(() => {}, [dataPlant]);
 
   return (
@@ -114,11 +122,11 @@ function Shop() {
       </div>
         </div>
         <div className="Page_Container">
-              <button onClick={Button} value="Preview" className="green1">Preview </button>
-              <button onClick={Button} value="1" className="green1">1</button>
-              <button onClick={Button} value="2" className="green1">2</button>
-              <button onClick={Button} value="3" className="green1">3</button>
-              <button onClick={Button} value="4" className="green1">4</button>
+              <button onClick={Button} value={"Preview"} className="green1">Preview </button>
+              <button onClick={Button} value={1} className="green1">1</button>
+              <button onClick={Button} value={2} className="green1">2</button>
+              <button onClick={Button} value={3} className="green1">3</button>
+              <button onClick={Button} value={4} className="green1">4</button>
               <button onClick={Button} value="Next" className="green1">Next</button>
         </div>
     </div>
