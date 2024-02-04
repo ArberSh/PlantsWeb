@@ -25,17 +25,34 @@ function Shop() {
       if(e.target.value === 'Preview' || e.target.value === 'Next'){
       if(e.target.value === 'Preview'){
         console.log('Preview')
-        setNumber((number) => ( number - 1))
+        if(number <= 0){
+        }
+        else{
+          setNumber((number) => ( number - 1 ))
+        }
         console.log(number)
       }
       else{
         console.log('Next')
+        if(number <= 4)
         setNumber((number) => ( number + 1))
+      else{
+      }
         console.log(number)
       }
       }
     else{
         setNumber(e.target.value)
+        const button = document.getElementById("ButtonForChangingAPI")
+        if(number == e.target.value){
+        button.style.color = "red"
+        button.style.cursor = "text"
+        }
+        else{
+          button.style.cursor = "pointer"
+          button.style.color = "green"
+        }
+        
         console.log(number)
       }
     };
@@ -123,10 +140,10 @@ function Shop() {
         </div>
         <div className="Page_Container">
               <button onClick={Button} value={"Preview"} className="green1">Preview </button>
-              <button onClick={Button} value={1} className="green1">1</button>
-              <button onClick={Button} value={2} className="green1">2</button>
-              <button onClick={Button} value={3} className="green1">3</button>
-              <button onClick={Button} value={4} className="green1">4</button>
+              <button onClick={Button} value={1} id="ButtonForChangingAPI" className="green1">1</button>
+              <button onClick={Button} value={2} id="ButtonForChangingAPI" className="green1">2</button>
+              <button onClick={Button} value={3} id="ButtonForChangingAPI" className="green1">3</button>
+              <button onClick={Button} value={4} id="ButtonForChangingAPI" className="green1">4</button>
               <button onClick={Button} value="Next" className="green1">Next</button>
         </div>
     </div>
