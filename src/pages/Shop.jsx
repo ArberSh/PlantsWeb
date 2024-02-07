@@ -6,19 +6,21 @@ import axios from "axios";
 function Shop() {
   const [dataPlant, setData] = useState("");
   const [number,setNumber] = useState(0)
-  const [newnumber,setnewNumber] = useState(0)
+  const [sunlight,setsunlight] = useState("")
   useEffect(() => {
-    async function fetchPosts(number) {
+    console.log(sunlight + "i api")
+    if(sunlight !== undefined){}
+    async function fetchPosts(number,sunlight) {
       try {
         const { data } = await axios.get(
-          `https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704&page=${number}`
+          `https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704&page=${number}&sunlight=${sunlight}`
         );
-        setData(data.data);
+      setData(data.data);
       } catch (error) {
         console.log("Error", error);
       }
-    }
-    fetchPosts(number);
+  }
+  fetchPosts(number,sunlight);
   }, [number]);
 
    function Button (e){
@@ -56,55 +58,108 @@ function Shop() {
         console.log(number)
       }
     };
-  useEffect(() => {}, [dataPlant]);
+    useEffect(() => {}, [dataPlant]);
+    
+    function refreshPage() {
+      window.location.reload(false);
+    }
 
-  return (
-    <div className="Shop">
+    function radioButton(e){
+      let value = e.target.value 
+      console.log(value)
+      switch(value){
+        case 'tree':
+          console.log( 'ITS FRICKING TREEE')
+        case 'flowers':
+          console.log('')
+        case 'full-shade':
+          setsunlight(value)
+      }
+    }
+
+    return (
+      <div className="Shop">
       <div className="Shop_Container">
         <div className="Filter_Container">
           <h1>Filter</h1>
+      <button onClick={refreshPage} className="ClearAll">Clear All</button>
           <div className="Filter type">
             <h2>Type</h2>
-            <div className="Input_Container">
-              <input type="radio" name="type" value="tree" />
+            <div  className="Input_Container">
+              <input onClick={radioButton} type="radio" name="type" value="tree" />
               <label>Tree</label>
             </div>
             <div className="Input_Container">
-              <input type="radio" name="type" value="flowers" />
+              <input onClick={radioButton} type="radio" name="type" value="flowers" />
               <label>Flowers</label>
-            </div>
-          </div>
-          <div className="Filter Caring">
-            <h2>Caring</h2>
-            <div className="Input_Container">
-              <input type="radio" name="care" value="easycare" />
-              <label>Easy-Care</label>
-            </div>
-            <div className="Input_Container">
-              <input type="radio" name="care" value="mediumcare" />
-              <label>Medium-Care</label>
             </div>
           </div>
           <div className="Filter SunLight">
             <h2>SunLight</h2>
             <div className="Input_Container">
-              <input type="radio" name="sunlight" value="full-sun" />
+              <input onClick={radioButton} type="radio" name="sunlight" value="full_shade" />
+              <label>Full Shade</label>
+            </div>
+            <div className="Input_Container">
+              <input onClick={radioButton} type="radio" name="sunlight" value="part-shade" />
+              <label>Part Shade</label>
+            </div>
+            <div className="Input_Container">
+              <input onClick={radioButton} type="radio" name="sunlight" value="sun-part_shade" />
+              <label>Sun , Part Shade</label>
+            </div>
+            <div className="Input_Container">
+              <input onClick={radioButton} type="radio" name="sunlight" value="full_sun" />
               <label>Full Sun</label>
             </div>
+          </div>
+          <div className="Filter Watering">
+            <h2>Watering</h2>
             <div className="Input_Container">
-              <input type="radio" name="sunlight" value="low-sun" />
-              <label>Low Sun</label>
+              <input onClick={radioButton} type="radio" name="watering" value="frequent" />
+              <label>Frequent</label>
+            </div>
+            <div className="Input_Container">
+              <input onClick={radioButton} type="radio" name="watering" value="average" />
+              <label>Average</label>
+            </div>
+            <div className="Input_Container">
+              <input onClick={radioButton} type="radio" name="watering" value="minimum" />
+              <label>Minimum</label>
+            </div>
+            <div className="Input_Container">
+              <input onClick={radioButton} type="radio" name="watering" value="none" />
+              <label>None</label>
             </div>
           </div>
-          <div className="Filter Watery">
-            <h2>Watery</h2>
+          <div className="Filter Cycle">
+            <h2>Cycle</h2>
             <div className="Input_Container">
-              <input type="radio" name="watery" value="Frequent" />
-              <label>Low Sun</label>
+              <input onClick={radioButton} type="radio" name="cycle" value="perennial" />
+              <label>Perennial</label>
             </div>
             <div className="Input_Container">
-              <input type="radio" name="watery" value="Average" />
-              <label>Average</label>
+              <input onClick={radioButton} type="radio" name="cycle" value="annual" />
+              <label>Annual</label>
+            </div>
+            <div className="Input_Container">
+              <input onClick={radioButton} type="radio" name="cycle" value="biennial" />
+              <label>Biennial</label>
+            </div>
+            <div className="Input_Container">
+              <input onClick={radioButton} type="radio" name="cycle" value="Biannual" />
+              <label>Biannual</label>
+            </div>
+          </div>
+          <div className="Filter Other">
+            <h2>Other</h2>
+            <div className="Input_Container">
+              <input onClick={radioButton} type="radio" name="other" value="edible" />
+              <label>Edible</label>
+            </div>
+            <div className="Input_Container">
+              <input onClick={radioButton} type="radio" name="other" value="indoor" />
+              <label>Indoor</label>
             </div>
           </div>
         </div>
