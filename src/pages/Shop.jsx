@@ -6,22 +6,24 @@ import axios from "axios";
 function Shop() {
   const [dataPlant, setData] = useState("");
   const [number,setNumber] = useState(0)
-  const [sunlight,setsunlight] = useState("")
+  const [sunlight1,setsunlight] = useState("")
   useEffect(() => {
-    console.log(sunlight + "i api")
-    if(sunlight !== undefined){}
-    async function fetchPosts(number,sunlight) {
-      try {
+    async function fetchPosts(number,sunlight1) {
+      console.log("sunlight")
+      
+        try {
         const { data } = await axios.get(
-          `https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704&page=${number}&sunlight=${sunlight}`
+          `https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704&page=${number}&sunlight=${sunlight1}`
         );
       setData(data.data);
       } catch (error) {
         console.log("Error", error);
       }
+      
+      
   }
-  fetchPosts(number,sunlight);
-  }, [number]);
+  fetchPosts(number);
+  }, [number ]);
 
    function Button (e){
       if(e.target.value === 'Preview' || e.target.value === 'Next'){
@@ -76,6 +78,10 @@ function Shop() {
           setsunlight(value)
       }
     }
+
+    useEffect((sunlight)=>{
+      console.log("sunlight i useEFFECTT" + sunlight)
+    },[sunlight1])
 
     return (
       <div className="Shop">
