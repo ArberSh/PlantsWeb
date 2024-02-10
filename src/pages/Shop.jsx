@@ -6,15 +6,23 @@ import axios from "axios";
 function Shop() {
   const [dataPlant, setData] = useState("");
   const [number,setNumber] = useState(0)
-  const [sunlight1,setsunlight] = useState("")
+  const [sunlight,setsunlight] = useState("")
+  const [watering,setwatering] = useState("")
+  console.log(sunlight || watering + "api")
   useEffect(() => {
-    async function fetchPosts(number,sunlight1) {
-      console.log("sunlight")
-      
+    async function fetchPosts(number,sunlight,watering) {
+        
         try {
-        const { data } = await axios.get(
-          `https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704&page=${number}&sunlight=${sunlight1}`
-        );
+        let apiUrl = `https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704&page=${number}`
+
+        if (sunlight !== undefined) {
+          apiUrl += `&sunlight=${sunlight}`;
+        }
+        else if (watering !== undefined){
+          apiUrl += `&watering=${watering}`
+        }
+    
+        const { data } = await axios.get(apiUrl);
       setData(data.data);
       } catch (error) {
         console.log("Error", error);
@@ -22,8 +30,8 @@ function Shop() {
       
       
   }
-  fetchPosts(number);
-  }, [number ]);
+  fetchPosts(number,sunlight,watering);
+  }, [number,sunlight]);
 
    function Button (e){
       if(e.target.value === 'Preview' || e.target.value === 'Next'){
@@ -74,14 +82,22 @@ function Shop() {
           console.log( 'ITS FRICKING TREEE')
         case 'flowers':
           console.log('')
-        case 'full-shade':
+        case 'full_shade':
           setsunlight(value)
+        case 'part_shade':
+          setsunlight(value)
+        case 'sun-part_shade':
+          setsunlight(value)
+        case 'full_sun':
+          setsunlight(value)
+        case 'frequent':
+          setwatering(value)
+        case 'average':
+          setwatering(value)
       }
     }
 
-    useEffect((sunlight)=>{
-      console.log("sunlight i useEFFECTT" + sunlight)
-    },[sunlight1])
+   
 
     return (
       <div className="Shop">
@@ -107,7 +123,7 @@ function Shop() {
               <label>Full Shade</label>
             </div>
             <div className="Input_Container">
-              <input onClick={radioButton} type="radio" name="sunlight" value="part-shade" />
+              <input onClick={radioButton} type="radio" name="sunlight" value="part_shade" />
               <label>Part Shade</label>
             </div>
             <div className="Input_Container">
