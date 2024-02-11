@@ -1,5 +1,8 @@
 import React from 'react'
 import '../pages/Contact.css'
+import Twitter from '../assests/Twitter.png'
+import Insta from '../assests/Instagram.png'
+import Facebook from '../assests/Facebook.png'
 
 function Contact() {
   return (
@@ -17,16 +20,13 @@ function Contact() {
                 <h1>Follow Us</h1>
                 <div className='LinksLogo'>
                     <a href="#">
-                        <img src="" alt="" />
+                        <img src={Facebook} alt="" />
                     </a>
                     <a href="#">
-                        <img src="" alt="" />
+                        <img src={Insta} alt="" />
                     </a>
                     <a href="#">
-                        <img src="" alt="" />
-                    </a>
-                    <a href="#">
-                        <img src="" alt="" />
+                        <img src={Twitter} alt="" />
                     </a>
                 </div>
             </div>

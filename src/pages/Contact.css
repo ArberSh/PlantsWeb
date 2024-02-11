@@ -48,3 +48,13 @@
     margin-bottom: 0.5rem;
 }
 
+.LinksLogo{
+    width: 20rem;
+display: flex;
+justify-content: start;
+}
+
+.LinksLogo img{
+    width: 100%;
+}
+
