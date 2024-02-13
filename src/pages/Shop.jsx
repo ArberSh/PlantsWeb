@@ -23,11 +23,11 @@ function Shop() {
         if(cycle !== undefined){
           apiUrl += `&cycle=${cycle}`;
         }
-        if(other !== 'edible'){
-          apiUrl += `&indoor=1`
-        }
-        if(other !== 'indoor'){
+        if(other === 'edible'){
           apiUrl += `&edible=1`
+        }
+        if(other === 'indoor'){
+          apiUrl += `&indoor=1`
         }
         const { data } = await axios.get(apiUrl);
         setData(data.data);
