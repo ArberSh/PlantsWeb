@@ -116,6 +116,20 @@ function Shop() {
     }
   }
 
+  function filterPlants(filter){
+    if(filter === 'A-Z'){
+      dataPlant.sort((a,b) =>
+        a.filteredData.toLowerCase() < b.filteredData.toLowerCase()
+        )
+      }
+      if(filter === 'Z-A'){
+        dataPlant.sort((a,b) =>
+          a.filteredData.toLowerCase() > b.filterPlants.toLowerCase())
+        }
+    }
+    
+  
+
   return (
     <div className="Shop">
       <div className="Shop_Container">
@@ -124,27 +138,6 @@ function Shop() {
           <button onClick={refreshPage} className="ClearAll">
             Clear All
           </button>
-          <div className="Filter type">
-            <h2>Type</h2>
-            <div className="Input_Container">
-              <input
-                onClick={radioButton}
-                type="radio"
-                name="type"
-                value="tree"
-              />
-              <label>Tree</label>
-            </div>
-            <div className="Input_Container">
-              <input
-                onClick={radioButton}
-                type="radio"
-                name="type"
-                value="flowers"
-              />
-              <label>Flowers</label>
-            </div>
-          </div>
           <div className="Filter SunLight">
             <h2>SunLight</h2>
             <div className="Input_Container">
@@ -291,7 +284,7 @@ function Shop() {
               <label style={{ fontSize: "20px", marginRight: "1rem" }}>
                 Sort By
               </label>
-              <select id="FilterSortBy">
+              <select onChange={(event)=> filterPlants(event.target.value)} id="FilterSortBy">
                 <option value="Featured">Featured</option>
                 <option value="A-Z">Alphabetically A-Z</option>
                 <option value="Z-A">Alphabetically Z-A</option>
