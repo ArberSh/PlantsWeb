@@ -116,19 +116,40 @@ function Shop() {
     }
   }
 
-  function filterPlants(filter){
-    if(filter === 'A-Z'){
-      dataPlant.sort((a,b) =>
-        a.filteredData.toLowerCase() < b.filteredData.toLowerCase()
-        )
-      }
-      if(filter === 'Z-A'){
-        dataPlant.sort((a,b) =>
-          a.filteredData.toLowerCase() > b.filterPlants.toLowerCase())
-        }
-    }
-    
+  function filterPlants(filter) {
+    let sortedData;
   
+    if (filter === 'A-Z') {
+      sortedData = [...dataPlant].sort((a, b) => {
+        if (a.common_name < b.common_name) {
+          return -1;
+        } else if (a.common_name > b.common_name) {
+          return 1;
+        }
+        return 0;
+      });
+      
+    }
+  
+    if (filter === 'Z-A') {
+      sortedData = [...dataPlant].sort((a, b) => {
+        if (a.common_name > b.common_name) {
+          return -1;
+        } else if (a.common_name < b.common_name) {
+          return 1;
+        }
+        return 0;
+      });
+    }
+    if(filter === 'Featured'){
+      sortedData = dataPlant
+      return 0
+    }
+    setData(sortedData);
+    return sortedData
+  }
+  
+
 
   return (
     <div className="Shop">
