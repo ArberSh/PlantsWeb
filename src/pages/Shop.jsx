@@ -123,33 +123,33 @@ function Shop() {
       sortedData = [...dataPlant].sort((a, b) => {
         if (a.common_name < b.common_name) {
           return -1;
-        } else if (a.common_name > b.common_name) {
-          return 1;
-        }
-        return 0;
+        } 
       });
       
     }
-  
     if (filter === 'Z-A') {
       sortedData = [...dataPlant].sort((a, b) => {
         if (a.common_name > b.common_name) {
           return -1;
-        } else if (a.common_name < b.common_name) {
-          return 1;
-        }
-        return 0;
+        } 
       });
     }
     if(filter === 'Featured'){
-      sortedData = dataPlant
-      return 0
+      sortedData = [...dataPlant].sort((a,b)=>{
+        if (a.id < b.id){
+          return -1;
+        }
+      });
     }
     setData(sortedData);
     return sortedData
+
   }
   
 
+    useEffect(()=>{
+      filter === 'Featured'
+    },[filterPlants])
 
   return (
     <div className="Shop">
