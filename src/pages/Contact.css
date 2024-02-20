@@ -55,6 +55,7 @@ justify-content: start;
 }
 
 .LinksLogo img{
+    object-fit: contain;
     width: 100%;
 }
 

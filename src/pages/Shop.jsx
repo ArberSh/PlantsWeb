@@ -6,12 +6,13 @@ import axios from "axios";
 function Shop() {
   const [dataPlant, setData] = useState("");
   const [number, setNumber] = useState(0);
-  const [ sunlight, setsunlight] = useState();
+  const [sunlight, setsunlight] = useState();
   const [watering, setwatering] = useState();
   const [cycle, setcycle] = useState();
   const [other, setother] = useState();
+
   useEffect(() => {
-    async function fetchPosts(number, sunlight, watering,cycle,other) {
+    async function fetchPosts(number, sunlight, watering, cycle, other) {
       try {
         let apiUrl = `https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704&page=${number}`;
         if (watering !== undefined) {
@@ -19,15 +20,15 @@ function Shop() {
         }
         if (sunlight !== undefined) {
           apiUrl += `&sunlight=${sunlight}`;
-        } 
-        if(cycle !== undefined){
+        }
+        if (cycle !== undefined) {
           apiUrl += `&cycle=${cycle}`;
         }
-        if(other === 'edible'){
-          apiUrl += `&edible=1`
+        if (other === "edible") {
+          apiUrl += `&edible=1`;
         }
-        if(other === 'indoor'){
-          apiUrl += `&indoor=1`
+        if (other === "indoor") {
+          apiUrl += `&indoor=1`;
         }
         const { data } = await axios.get(apiUrl);
         setData(data.data);
@@ -35,48 +36,15 @@ function Shop() {
         console.log("Error", error);
       }
     }
-    fetchPosts(number, sunlight, watering,cycle,other);
-  }, [number, sunlight,watering,cycle,other]);
-
-  function Button(e) {
-    if (e.target.value === "Preview" || e.target.value === "Next") {
-      if (e.target.value === "Preview") {
-        console.log("Preview");
-        if (number <= 0) {
-        } else {
-          setNumber((number) => number - 1);
-        }
-        console.log(number);
-      } else {
-        console.log("Next");
-        if (number <= 4) setNumber((number) => number + 1);
-        else {
-        }
-        console.log(number);
-      }
-    } else {
-      setNumber(e.target.value);
-      const button = document.getElementById("ButtonForChangingAPI");
-      if (number == e.target.value) {
-        button.style.color = "red";
-        button.style.cursor = "text";
-      } else {
-        button.style.cursor = "pointer";
-        button.style.color = "green";
-      }
-
-      console.log(number);
-    }
-  }
-  useEffect(() => {}, [dataPlant]);
+    fetchPosts(number, sunlight, watering, cycle, other);
+  }, [number, sunlight, watering, cycle, other]);
 
   function refreshPage() {
     window.location.reload(false);
   }
-
   function radioButton(e) {
     let value = e.target.value;
-    console.log(value)
+    console.log(value);
     switch (value) {
       case "full_shade":
         setsunlight(value);
@@ -86,10 +54,10 @@ function Shop() {
         setsunlight(value);
       case "full_sun":
         setsunlight(value);
-      break;
+        break;
     }
-    switch(value){
-        case "frequent":
+    switch (value) {
+      case "frequent":
         setwatering(value);
       case "average":
         setwatering(value);
@@ -97,60 +65,80 @@ function Shop() {
         setwatering(value);
       case "none":
         setwatering(value);
-      }
-    switch(value){
-      case "perennial":
-        setcycle(value)
-      case "annual":
-        setcycle(value)
-      case "biannual":
-        setcycle(value)
-      case "biennial":
-        setcycle(value)
     }
-    switch(value){
+    switch (value) {
+      case "perennial":
+        setcycle(value);
+      case "annual":
+        setcycle(value);
+      case "biannual":
+        setcycle(value);
+      case "biennial":
+        setcycle(value);
+    }
+    switch (value) {
       case "edible":
-        setother(value)
+        setother(value);
       case "indoor":
-        setother(value)
+        setother(value);
     }
   }
 
   function filterPlants(filter) {
     let sortedData;
-  
-    if (filter === 'A-Z') {
+
+    if (filter === "A-Z") {
       sortedData = [...dataPlant].sort((a, b) => {
         if (a.common_name < b.common_name) {
           return -1;
-        } 
+        }
       });
-      
     }
-    if (filter === 'Z-A') {
+    if (filter === "Z-A") {
       sortedData = [...dataPlant].sort((a, b) => {
         if (a.common_name > b.common_name) {
           return -1;
-        } 
+        }
       });
     }
-    if(filter === 'Featured'){
-      sortedData = [...dataPlant].sort((a,b)=>{
-        if (a.id < b.id){
+    if (filter === "Featured") {
+      sortedData = [...dataPlant].sort((a, b) => {
+        if (a.id < b.id) {
           return -1;
         }
       });
     }
     setData(sortedData);
-    return sortedData
-
+    return sortedData;
   }
-  
 
-    useEffect(()=>{
-      filter === 'Featured'
-    },[filterPlants])
+  function Button(e) {
+    if (e.target.value === "Preview" || e.target.value === "Next") {
+      if (e.target.value === "Preview") {
+        if (number <= 0) {
+        } else {
+          setNumber((number) => number - 1);
+        }
+      } else {
+        console.log("Next");
+        if (number <= 4) setNumber((number) => number + 1);
+        else {
+        }
+      }
+    } else {
+      setNumber(e.target.value);
+      const button = document.getElementById("ButtonForChangingAPI");
 
+      if (number == 1) {
+        console.log(number);
+        button.style.color = "red";
+        button.style.cursor = "text";
+      } else {
+        button.style.cursor = "pointer";
+        button.style.color = "green";
+      }
+    }
+  } 
   return (
     <div className="Shop">
       <div className="Shop_Container">
@@ -305,7 +293,10 @@ function Shop() {
               <label style={{ fontSize: "20px", marginRight: "1rem" }}>
                 Sort By
               </label>
-              <select onChange={(event)=> filterPlants(event.target.value)} id="FilterSortBy">
+              <select
+                onChange={(event) => filterPlants(event.target.value)}
+                id="FilterSortBy"
+              >
                 <option value="Featured">Featured</option>
                 <option value="A-Z">Alphabetically A-Z</option>
                 <option value="Z-A">Alphabetically Z-A</option>
@@ -314,11 +305,12 @@ function Shop() {
           </div>
           <div className="Plants_Container">
             {Array.isArray(dataPlant) ? (
-              dataPlant
+              dataPlant?.filter(elem => !elem?.cycle?.includes('Upgrade Plans'))
                 .filter(
                   (elem) =>
-                    elem.default_image !== null ||
-                    elem.default_image === undefined
+                   elem.default_image !== null ||
+                    elem.default_image === undefined 
+                    // nejse shif se vec kaq ke me shtu po se di ca mutin ka qe spo puno ksaj here ose thjesht boje kshu
                 )
                 .map((filteredData) => (
                   <div
