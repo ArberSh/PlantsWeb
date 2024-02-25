@@ -11,6 +11,9 @@ function Shop() {
   const [cycle, setcycle] = useState();
   const [other, setother] = useState();
 
+  let link = document.getElementsByClassName("link");
+  let currentValue = 1;
+
   useEffect(() => {
     async function fetchPosts(number, sunlight, watering, cycle, other) {
       try {
@@ -32,6 +35,7 @@ function Shop() {
         }
         const { data } = await axios.get(apiUrl);
         setData(data.data);
+        console.log("Plants data: ", data.data);
       } catch (error) {
         console.log("Error", error);
       }
@@ -49,8 +53,6 @@ function Shop() {
       case "full_shade":
         setsunlight(value);
       case "part_shade":
-        setsunlight(value);
-      case "sun-part_shade":
         setsunlight(value);
       case "full_sun":
         setsunlight(value);
@@ -112,33 +114,31 @@ function Shop() {
     return sortedData;
   }
 
-  function Button(e) {
-    if (e.target.value === "Preview" || e.target.value === "Next") {
-      if (e.target.value === "Preview") {
-        if (number <= 0) {
-        } else {
-          setNumber((number) => number - 1);
-        }
-      } else {
-        console.log("Next");
-        if (number <= 4) setNumber((number) => number + 1);
-        else {
-        }
-      }
-    } else {
-      setNumber(e.target.value);
-      const button = document.getElementById("ButtonForChangingAPI");
+  function prePage(){
 
-      if (number == 1) {
-        console.log(number);
-        button.style.color = "red";
-        button.style.cursor = "text";
-      } else {
-        button.style.cursor = "pointer";
-        button.style.color = "green";
-      }
-    }
-  } 
+  }
+
+  function nextPage(){
+
+  }
+
+  function changePage(){
+
+  }
+  
+
+  // if (e.target.value === "Preview" || e.target.value === "Next") {
+  //   if (e.target.value === "Preview") {
+  //     if (number <= 0) {
+  //     } else {
+  //       setNumber((number) => number - 1);
+  //     }
+  //   } else {
+  //     console.log("Next");
+  //     if (number <= 4) setNumber((number) => number + 1);
+  //     else {
+  //     }
+  //   }
   return (
     <div className="Shop">
       <div className="Shop_Container">
@@ -166,15 +166,6 @@ function Shop() {
                 value="part_shade"
               />
               <label>Part Shade</label>
-            </div>
-            <div className="Input_Container">
-              <input
-                onClick={radioButton}
-                type="radio"
-                name="sunlight"
-                value="sun-part_shade"
-              />
-              <label>Sun , Part Shade</label>
             </div>
             <div className="Input_Container">
               <input
@@ -305,12 +296,12 @@ function Shop() {
           </div>
           <div className="Plants_Container">
             {Array.isArray(dataPlant) ? (
-              dataPlant?.filter(elem => !elem?.cycle?.includes('Upgrade Plans'))
+              dataPlant
+                ?.filter((elem) => !elem?.cycle?.includes("Upgrade Plans"))
                 .filter(
                   (elem) =>
-                   elem.default_image !== null ||
-                    elem.default_image === undefined 
-                    // nejse shif se vec kaq ke me shtu po se di ca mutin ka qe spo puno ksaj here ose thjesht boje kshu
+                    elem.default_image !== null ||
+                    elem.default_image === undefined
                 )
                 .map((filteredData) => (
                   <div
@@ -326,46 +317,65 @@ function Shop() {
           </div>
         </div>
       </div>
-      <div className="Page_Container">
-        <button onClick={Button} value={"Preview"} className="green1">
+      <div className="Container-Page">
+        <ul className="pagination">
+          <li className="page-item">
+            <a href="#" className="page-link" onClick={prePage}>Prev</a>
+          </li>
+          <li className="page-item">
+            <a href="#" className="page-link" onClick={changePage}>1</a>
+          </li>
+          <li className="page-item">
+            <a href="#" className="page-link" onClick={changePage}>2</a>
+          </li>
+          <li className="page-item">
+            <a href="#" className="page-link" onClick={changePage}>3</a>
+          </li>
+          <li className="page-item">
+            <a href="#" className="page-link" onClick={changePage}>4</a>
+          </li>
+          <li className="page-item">
+            <a href="#" className="page-link" onClick={nextPage}>Next</a>
+          </li>
+        </ul>
+      </div>
+      {/* <div className="Page_Container">
+        <button onClick={ButtonPrev} value={"Preview"} className="green1">
           Preview{" "}
         </button>
         <button
           onClick={Button}
           value={1}
-          id="ButtonForChangingAPI"
-          className="green1"
+          className="link green1 active"
         >
           1
         </button>
         <button
           onClick={Button}
           value={2}
-          id="ButtonForChangingAPI"
-          className="green1"
+          className="link green1"
         >
           2
         </button>
         <button
           onClick={Button}
           value={3}
-          id="ButtonForChangingAPI"
-          className="green1"
+          className="link green1"
         >
           3
         </button>
         <button
           onClick={Button}
           value={4}
-          id="ButtonForChangingAPI"
-          className="green1"
+          className="link green1"
         >
           4
         </button>
-        <button onClick={Button} value="Next" className="green1">
+        <button onClick={ButtonNext
+        } value="Next" className="green1">
           Next
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

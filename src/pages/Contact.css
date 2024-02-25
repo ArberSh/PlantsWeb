@@ -49,13 +49,13 @@
 }
 
 .LinksLogo{
-    width: 20rem;
-display: flex;
-justify-content: start;
+    width: 12rem;
 }
 
 .LinksLogo img{
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
     object-fit: contain;
-    width: 100%;
 }
 
