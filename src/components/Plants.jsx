@@ -5,7 +5,8 @@ function Plants({ data }) {
   
   return (
     <div>
-      <div className="Plant_Container ">
+      {data.default_image.thumbnail ? (<div className="Plant_Container ">
+      
         <div className="Image_Plant">
           <img
             src={
@@ -25,7 +26,16 @@ function Plants({ data }) {
           <button className="AddtoCart">Add to Cart</button>
         </div>
       </div>
-    </div>
+    ) 
+    : (
+    <>
+          <div className="plant__img--skeleton"></div>
+          <div className="skeleton plant__title--skeleton"></div>
+          <div className="skeleton plant__price--skeleton"></div>
+      </>
+      )
+      }
+     </div> 
   );
 }
 

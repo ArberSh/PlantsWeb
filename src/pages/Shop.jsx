@@ -10,9 +10,9 @@ function Shop() {
   const [watering, setwatering] = useState();
   const [cycle, setcycle] = useState();
   const [other, setother] = useState();
+  const [activeButton, setActiveButton] = useState(1);
 
-  let link = document.getElementsByClassName("link");
-  let currentValue = 1;
+  let button = document.getElementsByClassName("active");
 
   useEffect(() => {
     async function fetchPosts(number, sunlight, watering, cycle, other) {
@@ -114,18 +114,37 @@ function Shop() {
     return sortedData;
   }
 
-  function prePage(){
-
+  function ButtonPrev() {
+    if (number >= 0) {
+      setNumber((number) => number - 1);
+    }
   }
 
-  function nextPage(){
-
+  function ButtonNext() {
+    if (number < 4) {
+      setNumber((number) => number + 1);
+    }
   }
 
-  function changePage(){
-
+  function Button(e) {
+    let value = e.target.value;
+    // setNumber(value)
+    // if(value){
+    //   button.classList.remove('active');
+    // }
+    // if(value === 1){
+    //   button.classList.add('active');
+    // }
+    // if(value === 2){
+    //   button.classList.add('active');
+    // }
+    // if(value === 3){
+    //   button.classList.add('active');
+    // }
+    // if(value === 4){
+    //   button.classList.add('active');
+    // }
   }
-  
 
   // if (e.target.value === "Preview" || e.target.value === "Next") {
   //   if (e.target.value === "Preview") {
@@ -139,6 +158,34 @@ function Shop() {
   //     else {
   //     }
   //   }
+  const buttonFunction = (e) => {
+    if(e.target.value === 'Preview'){
+      console.log('this is pree');
+    }
+    else if(e.target.value === 'Next'){
+      console.log('this is next')
+    }
+    else{
+      setActiveButton(e.target.value);
+      console.log(e.target.value);
+      setNumber(e.target.value)
+    }
+  };
+
+  const buttons = Array.from(
+    {
+      length: 4,
+    },
+    (_, index) => (
+      <button
+        onClick={buttonFunction}
+        value={index + 1}
+        className={`green1 ${activeButton == index + 1 && "active"}`}
+      >
+        {index + 1}
+      </button>
+    )
+  );
   return (
     <div className="Shop">
       <div className="Shop_Container">
@@ -317,65 +364,15 @@ function Shop() {
           </div>
         </div>
       </div>
-      <div className="Container-Page">
-        <ul className="pagination">
-          <li className="page-item">
-            <a href="#" className="page-link" onClick={prePage}>Prev</a>
-          </li>
-          <li className="page-item">
-            <a href="#" className="page-link" onClick={changePage}>1</a>
-          </li>
-          <li className="page-item">
-            <a href="#" className="page-link" onClick={changePage}>2</a>
-          </li>
-          <li className="page-item">
-            <a href="#" className="page-link" onClick={changePage}>3</a>
-          </li>
-          <li className="page-item">
-            <a href="#" className="page-link" onClick={changePage}>4</a>
-          </li>
-          <li className="page-item">
-            <a href="#" className="page-link" onClick={nextPage}>Next</a>
-          </li>
-        </ul>
-      </div>
-      {/* <div className="Page_Container">
-        <button onClick={ButtonPrev} value={"Preview"} className="green1">
-          Preview{" "}
+      <div className="Page_Container">
+        <button onClick={buttonFunction} value={"Preview"} className="green1 ">
+          Previous{" "}
         </button>
-        <button
-          onClick={Button}
-          value={1}
-          className="link green1 active"
-        >
-          1
-        </button>
-        <button
-          onClick={Button}
-          value={2}
-          className="link green1"
-        >
-          2
-        </button>
-        <button
-          onClick={Button}
-          value={3}
-          className="link green1"
-        >
-          3
-        </button>
-        <button
-          onClick={Button}
-          value={4}
-          className="link green1"
-        >
-          4
-        </button>
-        <button onClick={ButtonNext
-        } value="Next" className="green1">
+        {buttons}
+        <button onClick={buttonFunction} value="Next" className="green1">
           Next
         </button>
-      </div> */}
+      </div>
     </div>
   );
 }

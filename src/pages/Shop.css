@@ -119,22 +119,16 @@ box-shadow: inset 1em 1em var(--form-control-color);
   margin: 2rem 0;
 }
 
-.Container-Page{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  background-color: rgb(155, 155, 255);
-}
-
-.pagination{
-  display: flex;
+.Page_Container button{
+  margin: 0 0.6rem;
+  border: none;
+  background-color: white;
   font-size: 20px;
   cursor: pointer;
 }
 
-.pegination a{
-  color: black;
+.Page_Container button:hover{
+  color: rgb(43, 196, 43);
 }
 
 .active {

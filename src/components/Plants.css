@@ -70,3 +70,16 @@
 .Button_Container .AddtoCart:hover{
     background-color: rgb(105, 219, 67);
 }
+
+.plant__img--skeleton{
+    background-color: gray;
+}
+
+.skeleton{
+    background-color: gray;
+}
+
+.plant__title--skeleton{
+    width: 20rem;
+    height: 2rem;
+}
