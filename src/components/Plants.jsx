@@ -22,8 +22,12 @@ function Plants({ data }) {
           <h4>{data.common_name}</h4>
         </div>
         <div className="Button_Container">
+          <a className="ButtonLink" href="">
           <button className="MoreInfo">More Info</button>
+          </a>
+          <a className="ButtonLink">
           <button className="AddtoCart">Add to Cart</button>
+          </a>
         </div>
       </div>
     ) 

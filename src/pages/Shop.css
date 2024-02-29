@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.black{
+  color: black;
+}
+
 .Shop_Container{
   padding: 10rem 2rem 0 2rem;
   display: flex;

@@ -359,7 +359,7 @@ function Shop() {
                   </div>
                 ))
             ) : (
-              <p>Not Working</p>
+              <p className="black">API has stopped working or other issue.Please try next time</p>
             )}
           </div>
         </div>

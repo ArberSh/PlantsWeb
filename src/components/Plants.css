@@ -83,3 +83,7 @@
     width: 20rem;
     height: 2rem;
 }
+
+.ButtonLink{
+    all: unset;
+}
