@@ -72,16 +72,16 @@
 }
 
 .plant__img--skeleton{
-    background-color: gray;
+    background-color: rgb(197, 197, 197);
 }
 
 .skeleton{
-    background-color: gray;
+    background-color: rgb(197, 197, 197);
 }
 
 .plant__title--skeleton{
-    width: 20rem;
-    height: 2rem;
+    width: 10rem;
+    height: 1.2rem;
 }
 
 .ButtonLink{

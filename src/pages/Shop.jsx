@@ -12,8 +12,6 @@ function Shop() {
   const [other, setother] = useState();
   const [activeButton, setActiveButton] = useState(1);
 
-  let button = document.getElementsByClassName("active");
-
   useEffect(() => {
     async function fetchPosts(number, sunlight, watering, cycle, other) {
       try {
@@ -126,38 +124,6 @@ function Shop() {
     }
   }
 
-  function Button(e) {
-    let value = e.target.value;
-    // setNumber(value)
-    // if(value){
-    //   button.classList.remove('active');
-    // }
-    // if(value === 1){
-    //   button.classList.add('active');
-    // }
-    // if(value === 2){
-    //   button.classList.add('active');
-    // }
-    // if(value === 3){
-    //   button.classList.add('active');
-    // }
-    // if(value === 4){
-    //   button.classList.add('active');
-    // }
-  }
-
-  // if (e.target.value === "Preview" || e.target.value === "Next") {
-  //   if (e.target.value === "Preview") {
-  //     if (number <= 0) {
-  //     } else {
-  //       setNumber((number) => number - 1);
-  //     }
-  //   } else {
-  //     console.log("Next");
-  //     if (number <= 4) setNumber((number) => number + 1);
-  //     else {
-  //     }
-  //   }
   const buttonFunction = (e) => {
     if(e.target.value === 'Preview'){
       console.log('this is pree');

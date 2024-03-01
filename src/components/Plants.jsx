@@ -1,8 +1,16 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../components/Plants.css";
 
 function Plants({ data }) {
   
+  const Navigate = useNavigate();
+  
+  
+  function MoreInfo(){
+    Navigate(`/MoreInfo/${data.id}`)
+  }
+  console.log(data.id)
   return (
     <div>
       {data.default_image.thumbnail ? (<div className="Plant_Container ">
@@ -22,7 +30,7 @@ function Plants({ data }) {
           <h4>{data.common_name}</h4>
         </div>
         <div className="Button_Container">
-          <a className="ButtonLink" href="">
+          <a onClick={MoreInfo} className="ButtonLink" href="">
           <button className="MoreInfo">More Info</button>
           </a>
           <a className="ButtonLink">
