@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../components/Plants.css";
 
 function Plants({ data }) {
@@ -30,9 +30,9 @@ function Plants({ data }) {
           <h4>{data.common_name}</h4>
         </div>
         <div className="Button_Container">
-          <a onClick={MoreInfo} className="ButtonLink" href="">
-          <button className="MoreInfo">More Info</button>
-          </a>
+        <Link to={`/MoreInfo/${data.id}`} className="ButtonLink">
+          <button className="MoreInfo_Button">More Info</button>
+          </Link>
           <a className="ButtonLink">
           <button className="AddtoCart">Add to Cart</button>
           </a>

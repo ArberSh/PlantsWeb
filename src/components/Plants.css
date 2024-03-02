@@ -52,12 +52,12 @@
     transition: 100ms ease;
 }
 
-.Button_Container .MoreInfo{
+.Button_Container .MoreInfo_Button{
     border:1px solid rgb(95, 203, 58);
     color: rgb(95, 203, 58);;
 }
 
-.Button_Container .MoreInfo:hover{
+.Button_Container .MoreInfo_Button:hover{
     box-shadow: 2px 2px 6px rgb(141, 141, 141);
 }
 
