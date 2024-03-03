@@ -31,6 +31,9 @@ function MoreInfo() {
             </div>
             <div className='Description_Container'>
               <h1>{Plant.common_name}</h1>
+              <div className='Price'>
+                <h2 className='green1'>15.99$</h2>
+              </div>
               <div className='Types'>
                 <ul>
                   <li className='type'><span className='Bold'>Type:</span>{Plant.type}</li>
@@ -40,10 +43,10 @@ function MoreInfo() {
                 </ul>
               </div>
               <div className='Description'>
-                <h3>Description</h3>
                 <p className='black'>{Plant.description}</p>
               </div>
               <div className='Button_MoreInfo'>
+                <input type="number" name="" id="" max="99" min="0" />
                 <button>Add to Cart</button>
               </div>
             </div>
