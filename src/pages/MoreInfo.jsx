@@ -23,6 +23,9 @@ function MoreInfo() {
 
   return (
     <div className='MoreInfo'>
+        <div className='Link'>
+            
+        </div>
       <div className='Container_MoreInfo'>
         {Plant && (
           <>

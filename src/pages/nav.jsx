@@ -5,6 +5,7 @@ import LogoCart from "../assests/Cart.svg"
 import axios from "axios"
 import Search from "../assests/Search.svg"
 import Menu from "../assests/menu.svg"
+import { Link } from "react-router-dom";
 
 function Nav() {
 
@@ -72,11 +73,11 @@ window.addEventListener("scroll",Scroll)
         </div>
         </div>
             <div className={scroll ? 'Nav_Down_fixed active' : 'Nav_Down'}>
-                <a href="/shop" className="link__hover-effect">Shop</a>
-                <a className="link__hover-effect">Plant Care</a>
-                <a href="#Subscriptions" className="link__hover-effect">Subscribe</a>
-                <a href="#AboutUs" className="link__hover-effect">About Us</a>
-                <a className="link__hover-effect">Contact Us</a>
+                <Link to={`/shop`} className="link__hover-effect">Shop</Link>
+                <Link to={`/PlantCare`} className="link__hover-effect">Plant Care</Link>
+                <Link to={`/`} className="link__hover-effect">Subscribe</Link>
+                <Link to={`/`} className="link__hover-effect">About Us</Link>
+                <Link to={`/`} className="link__hover-effect">Contact Us</Link>
             </div>
       
     </nav>
