@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import GuidePlant from '../components/GuidePlant'
+import '../pages/PlantCare.css'
 
 function PlantCare() {
 

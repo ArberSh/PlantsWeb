@@ -126,10 +126,14 @@ function Shop() {
 
   const buttonFunction = (e) => {
     if(e.target.value === 'Preview'){
-      console.log('this is pree');
+      if (number >= 0) {
+        setNumber((number) => number - 1);
+      }
     }
     else if(e.target.value === 'Next'){
-      console.log('this is next')
+      if (number < 4) {
+        setNumber((number) => number + 1);
+      }
     }
     else{
       setActiveButton(e.target.value);

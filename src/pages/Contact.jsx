@@ -1,8 +1,8 @@
 import React from 'react'
 import '../pages/Contact.css'
-import Twitter from '../assests/Twitter.png'
-import Insta from '../assests/Instagram.png'
-import Facebook from '../assests/Facebook.png'
+import Twitter from '../assests/twitter.svg'
+import Insta from '../assests/instagram.svg'
+import Facebook from '../assests/facebook.svg'
 
 function Contact() {
   return (
@@ -23,7 +23,7 @@ function Contact() {
                         <img src={Facebook} alt="" />
                     </a>
                     <a href="#">
-                        <img src={Insta} alt="" />
+                        <img style={{filter:"invert(1)"}} src={Insta} alt="" />
                     </a>
                     <a href="#">
                         <img src={Twitter} alt="" />

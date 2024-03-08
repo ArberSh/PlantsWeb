@@ -11,7 +11,7 @@ function MoreInfo() {
     async function fetchPosts(id) {
       try {
         const { data } = await axios.get(`https://perenual.com/api/species/details/${id}?key=sk-qcAS65a265f29c4111704`);
-        console.log(data);
+
         setPlant(data);
       } catch (error) {
         console.log("Error", error);

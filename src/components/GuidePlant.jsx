@@ -1,4 +1,5 @@
 import React from 'react'
+import '../components/GuidePlant.css'
 
 function GuidePlant({data}) {
   return (
