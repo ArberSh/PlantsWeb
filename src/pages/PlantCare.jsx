@@ -9,11 +9,15 @@ function PlantCare() {
 
   useEffect(() => {
     async function DataPlant(){
+      try{
       const {data} = await axios.get(`https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704`)
-      SetPlant(data.data)
+    SetPlant(data.data)}
+    catch (error) {
+      console.log("Error:" + error )
+    }
     }
     DataPlant()
-  })
+  },[])
   return (
     <>
     <div className='PlantCare_Container'>
