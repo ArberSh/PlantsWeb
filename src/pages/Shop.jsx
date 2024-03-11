@@ -112,18 +112,6 @@ function Shop() {
     return sortedData;
   }
 
-  function ButtonPrev() {
-    if (number >= 0) {
-      setNumber((number) => number - 1);
-    }
-  }
-
-  function ButtonNext() {
-    if (number < 4) {
-      setNumber((number) => number + 1);
-    }
-  }
-
   const buttonFunction = (e) => {
     if(e.target.value === 'Preview'){
       if (number >= 0) {

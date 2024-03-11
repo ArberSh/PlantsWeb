@@ -1,4 +1,18 @@
 .PlantCare_Container{
     padding-top: 10rem;
     text-align: center;
+    background-color: rgb(255, 250, 244);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.PlantCare_Container h1{
+    font-size: 40px;
+}
+
+.PlantsGuide_Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 14%;
 }

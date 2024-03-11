@@ -10,7 +10,7 @@ function PlantCare() {
   useEffect(() => {
     async function DataPlant(){
       try{
-      const {data} = await axios.get(`https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704`)
+      const {data} = await axios.get(`https://perenual.com/api/species-list?key=sk-kC5f65ef2b98f36014519`)
     SetPlant(data.data)}
     catch (error) {
       console.log("Error:" + error )
@@ -21,7 +21,7 @@ function PlantCare() {
   return (
     <>
     <div className='PlantCare_Container'>
-      <h1>Plant Care Guides</h1>
+      <h1 className='green1'>Plant Care Guides</h1>
       <div className='PlantsGuide_Container'>
       {Array.isArray(Plant) ? (
               Plant.filter(

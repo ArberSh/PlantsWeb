@@ -3,13 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../components/Plants.css";
 
 function Plants({ data }) {
-  
-  const Navigate = useNavigate();
-  
-  
-  function MoreInfo(){
-    Navigate(`/MoreInfo/${data.id}`)
-  }
+ 
   console.log(data.id)
   return (
     <div>

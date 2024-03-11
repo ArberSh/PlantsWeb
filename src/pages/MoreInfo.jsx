@@ -10,7 +10,7 @@ function MoreInfo() {
   useEffect(() => {
     async function fetchPosts(id) {
       try {
-        const { data } = await axios.get(`https://perenual.com/api/species/details/${id}?key=sk-LPx165a266de2b29d3764`);
+        const { data } = await axios.get(`https://perenual.com/api/species/details/${id}?key=sk-qcAS65a265f29c4111704`);
         setPlant(data);
       } catch (error) {
         console.log("Error", error);
