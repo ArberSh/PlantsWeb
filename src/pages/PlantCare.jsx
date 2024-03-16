@@ -10,7 +10,7 @@ function PlantCare() {
   useEffect(() => {
     async function DataPlant(){
       try{
-      const {data} = await axios.get(`https://perenual.com/api/species-list?key=sk-kC5f65ef2b98f36014519`)
+      const {data} = await axios.get(`https://perenual.com/api/species-list?key=sk-LPx165a266de2b29d3764&page=1`)
     SetPlant(data.data)}
     catch (error) {
       console.log("Error:" + error )
