@@ -5,6 +5,9 @@
 
 .GuidePlant{
     margin: 1rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .GuidePlant img{
@@ -18,5 +21,6 @@
 .GuidePlant h2{
     width: 16rem;
     margin-top: 0.4rem;
+    
 }
 
