@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../pages/GuidingPlant.css";
+import Sunlight from "../assests/sunlight.png"
+import Watering from "../assests/water.png"
 
 function GuidingPlant() {
   const { id } = useParams();
@@ -53,10 +55,9 @@ function GuidingPlant() {
 //   console.log(filteredPlant.section[0].description)
   return (
     <div className="GuidingPlant">
-        <div className="GuidingPlantTitle">
             {/* shife ktu lart */}
       {filteredPlant ? (
-        <div>
+        <div className="GuidingPlantTitle">
           <h1>HOW TO GUIDE</h1>
           <h1 className="green1">{filteredPlant.common_name}</h1>
           <img
@@ -68,15 +69,28 @@ function GuidingPlant() {
             alt=""
           />
           <div className="DescriptionGuide">
-            <div className="Watering">
+            <div className="Description greenBg">
                 <div className="WateringImage">
-
+                  <img className="Picture" src={Watering}></img>
                 </div>
                 <div className="WateringDescription">
                     <h3>Watering:{plant.watering}</h3>
                     <p>{filteredPlant.section[0].description}</p>
                 </div>
             </div>
+            <div className="Description">
+                <div className="SunLightImage">
+
+                </div>
+                <div className="SunLightDescription">
+                    <h3>SunLight:{plant.sunlight}</h3>
+                    <p>{filteredPlant.section[1].description}</p>
+                </div>
+            </div>
+            <div className="SunLightDescription">
+                    <h3>SunLight:{plant.sunlight}</h3>
+                    <p>{filteredPlant.section[2].description}</p>
+                </div>
           </div>
           
         </div>
@@ -84,7 +98,6 @@ function GuidingPlant() {
         <p>Not Working</p>
       )}
       </div>
-    </div>
   );
 }
 
