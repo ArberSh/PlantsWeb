@@ -1,14 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .greenBg{
-    background-color: #4DD366;
+    background-color: #1bbe39;
+}
+
+.greenColor{
+    color: #1bbe39;
 }
 
 .GuidingPlant{
-    padding-top:10rem ;
+    padding-top:8rem ;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 2rem;
+}
+
+.GuidingPlantOverall{
+    padding: 2rem;
+    flex-direction: column;
+    width: 100%;
 }
 
 .GuidingPlantTitle{
@@ -16,6 +27,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 2rem;
 }
 
 .GuidingPlant h1{
@@ -33,29 +45,47 @@
 }
 
 .Description{
-    width: 100%;
-    max-width: 100rem;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 1rem 1rem 1rem 3rem;
+    padding: 1rem 2rem;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-
 .WateringImage img{
-    background-color: rgb(198, 75, 75);
+    background-color: rgb(255, 255, 255);
     width: 8rem;
     height: 8rem;
     border-radius: 50%;
     padding:1.2rem;
 }
 
-.GuidingPlant p {
-    color: black;
-    width: 100%;
-    max-width: 50rem;
+.GuidingPlant h3{
+    font-size: 24px;
+    margin-bottom: 1rem;
 }
 
-.DescriptionGuide{
-    padding: 1rem 2rem ;
+.GuidingPlant p {
+    line-height: 1.2;
+    width: 100%;
+    max-width:55rem;
+    font-size: 18px;
 }
+
+.SunLightImage img{
+    background-color: rgb(255, 255, 255);
+    width: 8rem;
+    height: 8rem;
+}
+
+.PruningImage img{
+    background-color: rgb(255, 255, 255);
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    padding:1.2rem;
+}
+

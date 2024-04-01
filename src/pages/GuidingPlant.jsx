@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import "../pages/GuidingPlant.css";
 import Sunlight from "../assests/sunlight.png"
 import Watering from "../assests/water.png"
+import Pruning from "../assests/Pruning.png"
 
 function GuidingPlant() {
   const { id } = useParams();
@@ -55,9 +56,9 @@ function GuidingPlant() {
 //   console.log(filteredPlant.section[0].description)
   return (
     <div className="GuidingPlant">
-            {/* shife ktu lart */}
       {filteredPlant ? (
-        <div className="GuidingPlantTitle">
+        <div className="GuidingPlantOverall">
+          <div className="GuidingPlantTitle">
           <h1>HOW TO GUIDE</h1>
           <h1 className="green1">{filteredPlant.common_name}</h1>
           <img
@@ -68,6 +69,7 @@ function GuidingPlant() {
             }
             alt=""
           />
+          </div>
           <div className="DescriptionGuide">
             <div className="Description greenBg">
                 <div className="WateringImage">
@@ -80,17 +82,22 @@ function GuidingPlant() {
             </div>
             <div className="Description">
                 <div className="SunLightImage">
-
+                  <img className="Picture" src={Sunlight}></img>
                 </div>
                 <div className="SunLightDescription">
-                    <h3>SunLight:{plant.sunlight}</h3>
-                    <p>{filteredPlant.section[1].description}</p>
+                    <h3 className="greenColor">SunLight:{plant.sunlight}</h3>
+                    <p className="greenColor">{filteredPlant.section[1].description}</p>
                 </div>
             </div>
-            <div className="SunLightDescription">
-                    <h3>SunLight:{plant.sunlight}</h3>
+            <div className="Description greenBg">
+                <div className="PruningImage">
+                  <img src={Pruning}></img>
+                </div>
+                <div className="PruningDescription">
+                    <h3>Pruning</h3>
                     <p>{filteredPlant.section[2].description}</p>
                 </div>
+            </div>
           </div>
           
         </div>
