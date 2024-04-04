@@ -12,6 +12,7 @@ function Shop() {
   const [other, setother] = useState();
   const [activeButton, setActiveButton] = useState(1);
   const [Loading,setLoading] = useState(true)
+  //fix 
 
   useEffect(() => {
     async function fetchPosts(number, sunlight, watering, cycle, other) {
