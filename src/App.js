@@ -7,6 +7,7 @@ import Shop from './pages/Shop.jsx';
 import PlantCare from './pages/PlantCare.jsx';
 import MoreInfo from './pages/MoreInfo.jsx';
 import GuidingPlant from './pages/GuidingPlant.jsx';
+import Cart from './pages/Cart.jsx';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
     <Route path="/MoreInfo/:id" element={<MoreInfo />} />
     <Route path="/PlantCare/" element={<PlantCare/>}/>
     <Route path="/GuidePlant/:id" element={<GuidingPlant/>}/>
+    <Route path="/Cart" element={<Cart/>}/>
     </Routes>
     <Contact/>
     </>

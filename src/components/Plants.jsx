@@ -27,9 +27,9 @@ function Plants({ data }) {
         <Link to={`/MoreInfo/${data.id}`} className="ButtonLink">
           <button className="MoreInfo_Button">More Info</button>
           </Link>
-          <a className="ButtonLink">
+          <Link to={'/Cart/'} className="ButtonLink">
           <button className="AddtoCart">Add to Cart</button>
-          </a>
+          </Link>
         </div>
       </div>
     ) 
