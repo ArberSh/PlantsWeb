@@ -68,7 +68,9 @@ window.addEventListener("scroll",Scroll)
           </div>
         </div>
         <div>
+        <Link to={"/Cart"}>
             <img className="LogoCart" src={LogoCart} alt="" />
+            </Link>
           </div>
         </div>
         </div>

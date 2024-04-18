@@ -1,10 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../components/Plants.css";
 
 function Plants({ data }) {
- 
-  console.log(data.id)
+  const [CartItem,setCartItem] = useState(0)
+  
+
+  function ChangeCart(){
+    setCartItem((number) => number +1)
+  }
+  useEffect(() =>{
+    console.log(CartItem)
+  },[CartItem])
   return (
     <div>
       {data.default_image.thumbnail ? (<div className="Plant_Container ">
@@ -27,9 +34,9 @@ function Plants({ data }) {
         <Link to={`/MoreInfo/${data.id}`} className="ButtonLink">
           <button className="MoreInfo_Button">More Info</button>
           </Link>
-          <Link to={'/Cart/'} className="ButtonLink">
-          <button className="AddtoCart">Add to Cart</button>
-          </Link>
+          <a className="ButtonLink">
+          <button onClick={ChangeCart} className="AddtoCart">Add to Cart</button>
+          </a>
         </div>
       </div>
     ) 
