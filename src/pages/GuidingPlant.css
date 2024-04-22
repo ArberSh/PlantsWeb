@@ -39,8 +39,10 @@
 
 .GuidingPlant img{
     margin: 1rem 0;
-    width: 24rem;
-    height: 24rem;
+    width: 100%;
+    max-width: 24rem;
+    height: 100%;
+    max-height: 24rem;
     border-radius: 10px;
 }
 
@@ -89,3 +91,17 @@
     padding:1.2rem;
 }
 
+
+@media(max-width:800px){
+    .Description{
+        flex-direction: column;
+    }
+    .GuidingPlant h3{
+        text-align: center;
+    }
+    .WateringImage,.SunLightImage,.PruningImage{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

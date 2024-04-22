@@ -41,6 +41,23 @@ function Promo() {
           </div>
         </div>
       </div>
+      <div className="Promo_Container--Mobile"> 
+        <div className="FirstPromo">
+          <h1>House Plant Accessories</h1>
+        </div>
+        <div className="SecondPromo">
+          <h1>New Arrivals</h1>
+        </div>
+        <div className="ThirdPromo">
+          <h1>Seeds Packet</h1>
+        </div>
+        <div className="ForthPromo">
+          <h1>Promotional Item</h1>
+        </div>
+        <div className="FifthPromo">
+          <h1>Shipping Info</h1>
+        </div>
+      </div>
     </div>
   );
 }

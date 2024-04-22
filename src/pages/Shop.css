@@ -73,6 +73,8 @@ box-shadow: inset 1em 1em var(--form-control-color);
 }
 
 .ClearAll{
+  width: 100%;
+  max-width: 6rem;
   margin: 0 2rem;
   border: none;
   border: 1px solid black;
@@ -137,4 +139,14 @@ box-shadow: inset 1em 1em var(--form-control-color);
 
 .active {
   text-decoration: underline;
+}
+
+
+@media(max-width:840px){
+ .Filter_Container{
+  display: none;
+ }
+ .Plants{
+  margin-left: 0;
+ }
 }

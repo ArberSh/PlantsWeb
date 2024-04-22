@@ -10,7 +10,8 @@
 }
 
 .ShortDescription_Container{
-    width: 20%;
+    width: 100%;
+    max-width: 20rem;
     height: 50vh;
     display: flex;
     justify-content: center;
@@ -19,7 +20,8 @@
 }
 
 .ShortDescription_Container img{
-    width: 34%;
+    width: 100%;
+    max-width: 6rem;
 }
 
 .ShortDescription_Container h3{
@@ -30,4 +32,17 @@
 
 .green{
     color: rgb(0, 179, 0);
+}
+
+@media(max-width:600px){ 
+    #AboutUs{
+        height: 120vh;
+    }
+    .AboutUs_Container{
+        flex-direction:column;
+    }
+    .ShortDescription_Container{
+        height: 35vh;
+    }
+   
 }

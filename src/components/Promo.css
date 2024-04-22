@@ -1,7 +1,6 @@
 .Promo{
     height: 100vh;
     padding: 0 4rem;
-    margin-bottom: 6rem;
 }
 
 .Promo_Container{
@@ -95,12 +94,12 @@
     grid-row-end:7;
 }
 
-.PromoText_Container{
+.PromoText_Container,.Promo_Container--Mobile{
     text-align: right;
     margin-left: auto;
 }
 
-.PromoText_Container h1{
+.PromoText_Container,.Promo_Container--Mobile h1{
     color: white;
 }
 
@@ -119,3 +118,25 @@
 .forButton button{
     font-size: 16px;
 }
+
+.Promo_Container--Mobile{
+    display: none;
+}
+
+@media(max-width:800px){
+    .Promo{
+        padding: 0 2rem;
+    }
+    .Promo_Container{
+        display: none;
+    }
+    .Promo_Container--Mobile{
+        display: block;
+    }
+    .FirstPromo,.SecondPromo,.ThirdPromo,.ForthPromo,.FifthPromo{
+        cursor: pointer;
+        height: 10rem;
+        margin-bottom:1rem;
+    }
+}
+    

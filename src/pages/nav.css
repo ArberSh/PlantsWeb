@@ -160,3 +160,36 @@ a {
 .MenuButton_Container.fixed img{
   cursor: pointer;
 }
+
+@media(max-width:1500px){
+  .Search_Bar{
+    width: 50rem;
+  }
+}
+
+@media(max-width:1200px){
+  .Search_Bar{
+    width: 40rem;
+  }
+}
+
+@media(max-width:1000px){
+  .Search_Bar{
+    width: 20rem;
+  }
+}
+
+
+@media(max-width:600px){
+  .Search_Bar{
+    margin-bottom: 1rem;
+  }
+  .Logo{
+    display: none;
+  }
+  a{
+    margin-top: 1rem;
+  }
+}
+
+
