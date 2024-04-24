@@ -96,14 +96,32 @@ box-shadow: inset 1em 1em var(--form-control-color);
 }
 
 .SortBy-Container{
+  margin-left: 2rem;
   width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.Filter-Mobile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Filter-Mobile button{
+  width: 4rem;
+  background-color: #fff;
+  border: none;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+
+}
+
 .SortBy select{
-  width: 10rem;
+  max-width: 10rem;
   height: 2rem;
   font-size: 16px;
 }
@@ -148,5 +166,9 @@ box-shadow: inset 1em 1em var(--form-control-color);
  }
  .Plants{
   margin-left: 0;
+ }
+ .SortBy select{
+  width: 100%;
+  max-width: 6rem;
  }
 }

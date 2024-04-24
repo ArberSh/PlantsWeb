@@ -23,8 +23,10 @@
 }
 
 .Photo_Container img{
-    width: 26rem;
-    height: 26rem;
+    width: 100%;
+    max-width: 26rem;
+    height: 100%;
+    max-height: 26rem;
     object-fit: contain;
     border-radius: 8px;
 }
@@ -86,4 +88,43 @@
 
 .Button_MoreInfo button:active{
     background-color: rgb(71, 167, 39);
+}
+.Mobile{
+    display: none;
+}
+
+
+
+@media(max-width:1000px){
+    .MoreInfo{
+        padding-top: 6rem;
+    }
+    .Container_MoreInfo{
+        flex-direction: column;
+    }
+    .Container_MoreInfo h1{
+        text-align: center;
+    }
+    .Container_MoreInfo h2{
+        margin-top: 2rem;
+        font-size: 40px;
+    }
+    .Photo_Container{
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+    .Mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Button_MoreInfo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Container_MoreInfo p{
+        padding: 0;
+    }
 }

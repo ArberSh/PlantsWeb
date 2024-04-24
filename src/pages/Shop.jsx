@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../pages/Shop.css";
 import Plants from "../components/Plants";
 import axios from "axios";
+import Filter from "../assests/filter-solid.svg"
 
 function Shop() {
   const [dataPlant, setData] = useState("");
@@ -285,10 +286,14 @@ function Shop() {
           </div>
         </div>
         <div className="Plants">
+        <h1 style={{ fontSize: "36px", marginLeft: "1rem" }}>Plants</h1>
           <div className="SortBy-Container">
-            <h1 style={{ fontSize: "36px", marginLeft: "1rem" }}>Plants</h1>
+            <div className="Filter-Mobile">
+              <img style={{width:"1rem"}} src={Filter}/>
+              <button className="Filter-Button-Mobile">Filter</button>
+            </div>
             <div className="SortBy" style={{ marginRight: "4rem" }}>
-              <label style={{ fontSize: "20px", marginRight: "1rem" }}>
+              <label style={{ fontSize: "18px", marginRight: "0.4rem" }}>
                 Sort By
               </label>
               <select

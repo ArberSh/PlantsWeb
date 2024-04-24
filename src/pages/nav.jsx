@@ -6,7 +6,8 @@ import axios from "axios"
 import Search from "../assests/Search.svg"
 import Menu from "../assests/menu.svg"
 import { Link } from "react-router-dom";
-
+import MobileLogo from "../assests/LogoMobile.png";
+ 
 function Nav() {
 
 
@@ -43,46 +44,81 @@ window.addEventListener("scroll",Scroll)
 
 
   return (
-    <nav >
+    <nav>
       <div className="Nav_Top">
-        <div className="Row">
-          <div className={scroll ? "MenuButton_Container fixed" : "MenuButton_Container"}>
-        <button onClick={openMenu} className="MenuButton">
-            <img src={Menu} className="MenuImg" alt="" />
-          </button>
-          </div> 
-        <div className="Nav_Right">
+      <div className={scroll ? "MenuButton_Container fixed" : "MenuButton_Container"}>
+         <button onClick={openMenu} className="MenuButton">
          
-          <figure>
-            <a href="/">
-            <img className="Logo" src={Logo} alt="" />
-            </a>
-          </figure>
+            <img src={Menu} className="MenuImg" alt="" />
+            
+           </button>
+          </div>
+        <div className={scroll ? "Nav_Left-Fixed" : "Nav_Left"}>
+        <a href="/">
+            <img className="LogoNav" src={MobileLogo}/>  
+             </a>
         </div>
         <div className="Nav_Center">
-          <div className="Search_Bar">
-            <input className={scroll ? 'SearchField_fixed' : 'SearchField'} type="text" placeholder="What are you looking for?" />
-            <button className="SearchButton">
+        <input className={scroll ? 'SearchField_fixed' : 'SearchField'} type="text" placeholder="What are you looking for?" />
+             <button className="SearchButton">
                 <img src={Search} alt="" />
-            </button>
-          </div>
+             </button>
         </div>
-        <div>
+        <div className="Nav_Right">
         <Link to={"/Cart"}>
-            <img className="LogoCart" src={LogoCart} alt="" />
-            </Link>
-          </div>
+          <img className="LogoCart" src={LogoCart} alt="" />
+          </Link>
         </div>
-        </div>
-            <div className={scroll ? 'Nav_Down_fixed active' : 'Nav_Down'}>
-                <Link to={`/shop`} className="link__hover-effect">Shop</Link>
-                <Link to={`/PlantCare`} className="link__hover-effect">Plant Care</Link>
-                <Link to={`/`} className="link__hover-effect">Subscribe</Link>
-                <Link to={`/`} className="link__hover-effect">About Us</Link>
-                <Link to={`/`} className="link__hover-effect">Contact Us</Link>
-            </div>
-      
+      </div>
+      <div className={scroll ? 'Nav_Down_fixed active' :"Nav_Down"}>
+        <Link to={`/shop`} className="link__hover-effect">Shop</Link>
+        <Link to={`/PlantCare`} className="link__hover-effect">Plant Care</Link>
+        <Link to={`/`} className="link__hover-effect">Subscribe</Link>
+        <Link to={`/`} className="link__hover-effect">About Us</Link>
+        <Link to={`/`} className="link__hover-effect">Contact Us</Link>
+      </div>
     </nav>
+    // <nav >
+    //   <div className="Nav_Top">
+    //     <div className="Row">
+    //       <div className={scroll ? "MenuButton_Container fixed" : "MenuButton_Container"}>
+    //     <button onClick={openMenu} className="MenuButton">
+    //         <img src={Menu} className="MenuImg" alt="" />
+    //       </button>
+    //       </div> 
+    //     <div className="Nav_Right" style={{margin:0}}>
+         
+    //       <figure>
+    //         <a href="/">
+    //         <img className="Logo" src={Logo} alt="" />
+    //         <img className="Logo-Mobile" src={MobileLogo} />
+    //         </a>
+    //       </figure>
+    //     </div>
+    //     <div className="Nav_Center">
+    //       <div className="Search_Bar">
+    //         <input className={scroll ? 'SearchField_fixed' : 'SearchField'} type="text" placeholder="What are you looking for?" />
+    //         <button className="SearchButton">
+    //             <img src={Search} alt="" />
+    //         </button>
+    //       </div>
+    //     </div>
+    //     <div>
+    //     <Link to={"/Cart"}>
+    //         <img className="LogoCart" src={LogoCart} alt="" />
+    //         </Link>
+    //       </div>
+    //     </div>
+    //     </div>
+    //         <div className={scroll ? 'Nav_Down_fixed active' : 'Nav_Down'}>
+    //             <Link to={`/shop`} className="link__hover-effect">Shop</Link>
+    //             <Link to={`/PlantCare`} className="link__hover-effect">Plant Care</Link>
+    //             <Link to={`/`} className="link__hover-effect">Subscribe</Link>
+    //             <Link to={`/`} className="link__hover-effect">About Us</Link>
+    //             <Link to={`/`} className="link__hover-effect">Contact Us</Link>
+    //         </div>
+      
+    // </nav>
   );
 }
 

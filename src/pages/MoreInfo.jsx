@@ -33,6 +33,9 @@ function MoreInfo() {
             </div>
             <div className='Description_Container'>
               <h1>{Plant.common_name}</h1>
+              <div className='Photo_Container Mobile'>
+              <img src={Plant.default_image.thumbnail} alt="" />
+            </div>
               <div className='Price'>
                 <h2 className='green1'>15.99$</h2>
               </div>
@@ -44,7 +47,7 @@ function MoreInfo() {
                   <li className='watering'><span className='Bold'>Watering:</span>{Plant.watering}</li>
                 </ul>
               </div>
-              <div className='Description'>
+              <div className='Description-MoreInfo'>
                 <p className='black'>{Plant.description}</p>
               </div>
               <div className='Button_MoreInfo'>

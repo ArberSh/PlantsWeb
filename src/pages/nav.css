@@ -5,10 +5,155 @@
   scroll-behavior: smooth;
 }
 
-nav {
+nav{
+  background-color: #01890c;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+.Nav_Top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Nav_Left{
+  transition: all ease 600ms;
+  margin:0 1rem;
+}
+
+.LogoNav{
+  width: 100%;
+  max-width: 5rem;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.Nav_Center{
+  width: 100%;
+  max-width: 60rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Nav_Center input{
+  width: 90%;
+  height: 2.2rem;
+  outline: none;
+  padding-left:0.6rem ;
+  font-size: 16px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+}
+
+.Nav_Center button{
+  padding: 6px;
+  height: 2.2rem;
+  background-color: white;
+  border-radius: 0 4px 4px 0;
+  border: none;
+  cursor: pointer;
+}
+
+.Nav_Right{
+  margin:0 1rem;
+}
+
+.Nav_Right img{
+  width: 100%;
+  min-width: 1.4rem;
+}
+
+.Nav_Down{
+  padding: 0 1rem 1rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: all ease 400ms;
+}
+
+.Nav_Down a{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+.link__hover-effect{
+  position: relative;
+}
+
+.link__hover-effect::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  transition: all 300ms ease;
+}
+
+.link__hover-effect:hover:after{
+  left: 0;
+  width: 100%;
+}
+
+.Nav_Down_fixed{
+  transition: all ease 1000ms;
+  background-color: #01890c;
+  width: 100%;
+}
+
+.Nav_Down_fixed {
+  position: absolute;
+  opacity: 0;
+  top: 4rem;
+}
+.Nav_Down_fixed a{
+  visibility: hidden;
+}
+
+.MenuButton_Container{
+  margin-left: 1rem;
+  display: none;
+  position: absolute;
+  left: -3rem;
+  transition: all ease 600ms;
+
+}
+
+.MenuButton{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.MenuImg{
+  width: 1.4rem;
+}
+
+.fixed{
+  transition: all ease 400ms;
+  display: block;
+  position: absolute;
+  left: 1rem;
+}
+
+.Nav_Left-Fixed{
+  transition: all ease 600ms;
+  margin-left: 10%;
+}
+
+
+
+
+/* nav {
   background-color: #01890c;
   position:fixed;
   width: 100%;
+  max-width: 100rem;
   z-index: 100;
 }
 
@@ -161,6 +306,10 @@ a {
   cursor: pointer;
 }
 
+.Logo-Mobile{
+  display: none;
+}
+
 @media(max-width:1500px){
   .Search_Bar{
     width: 50rem;
@@ -184,12 +333,19 @@ a {
   .Search_Bar{
     margin-bottom: 1rem;
   }
+  nav{
+    width: 600px;
+  }
   .Logo{
     display: none;
   }
-  a{
-    margin-top: 1rem;
+  .Logo-Mobile{
+    width: 4rem;
+    display:block;
   }
-}
+  .Nav_Down{
+    display: none;
+  }
+} */
 
 
