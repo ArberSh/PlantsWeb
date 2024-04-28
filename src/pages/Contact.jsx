@@ -16,6 +16,7 @@ function Contact() {
                     <button>Sign Up</button>
                 </div>
             </div>
+            <hr  width = "100%" size = "1" color='#009116'/>
             <div className='FollowUs'>
                 <h1>Follow Us</h1>
                 <div className='LinksLogo'>
@@ -30,6 +31,7 @@ function Contact() {
                     </a>
                 </div>
             </div>
+            <hr  width = "100%" size = "1" color='#009116'/>
             <div className='EmailContact'>
                 <h1 className='email'>florafolio@gmail.com</h1>
                 <p>Contact Us if you have any problem and we will solve every possible problem</p>

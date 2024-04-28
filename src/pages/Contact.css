@@ -54,9 +54,33 @@
 }
 
 .LinksLogo img{
+    margin: 0 0.5rem;
     padding: 0;
     width: 2rem;
     height: 2rem;
     object-fit: contain;
+}
+hr{
+    display: none;
+}
+
+@media(max-width:900px){
+    hr{
+        display: block;
+    }
+    .Contact_Container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .miniform{
+        margin-bottom: 1rem;
+    }
+    .EmailContact{
+        margin-top: 1rem;
+    }
+    .FollowUs{
+        margin:1rem 0;
+    }
 }
 
