@@ -13,17 +13,26 @@ function Nav() {
   const [MenuMobile, setMenuMobile] = useState(false);
   const [windowSizeX, setWindowSize] = useState({ width: window.innerWidth });
 
+  function openMenuMobile(){
+    if (window.scrollX >= 600) {
+      setMenuMobile(true);
+      document.body.classList += "menu--open"
+    } else {
+      setMenuMobile(false);
+    }
+
+}
+
+function closeMenuMobile(){
+    document.body.classList.remove("menu--open")
+}
+
   function openMenu() {
     setScroll(false);
-    setMenuMobile(true);
-    document.body.style.overflow = "hidden";
-    
   }
 
   function closeMenu() {
     setScroll(true);
-    setMenuMobile(false);
-    document.body.style.overflow = "auto";
   }
 
   function Scroll() {
@@ -62,7 +71,7 @@ function Nav() {
             <img src={Menu} className="MenuImg" alt="" />
           </button>
         </div>
-        <div className={scroll ? "MenuButtonX_Container-appear" : "MenuButtonX_Container-noappear"}>
+        <div className={scroll ? "MenuButtonX_Container-noappear" : "MenuButtonX_Container-appear"}>
           <button onClick={closeMenu} className="MenuButton">
             <img src={CloseMenu} className="MenuImgX" alt="" />
           </button>
@@ -84,7 +93,7 @@ function Nav() {
           </Link>
         </div>
       </div>
-      <div className={`${scroll ? 'Nav_Down_fixed active' : 'Nav_Down'} ${MenuMobile ? 'Nav_Mobile' : 'Nav_Down'}`}>
+      <div className={scroll ? 'Nav_Down_fixed active' : 'Nav_Down' }>
         <Link to={`/shop`} className="link__hover-effect">Shop</Link>
         <Link to={`/PlantCare`} className="link__hover-effect">Plant Care</Link>
         <Link to={`/`} className="link__hover-effect">Subscribe</Link>

@@ -160,8 +160,6 @@ nav{
 
 .Nav_Mobile{
   height: 100vh;
-  overflow-y: hidden;
-  overflow-x: hidden;
   background-color: gray;
   display: flex;
   justify-content: center;
@@ -170,6 +168,9 @@ nav{
   font-size: 30px;
 }
 
+.MenuButtonX_Container-appear{
+  display: flex;
+}
 
 @media(max-width:600px){
   .Nav_Down{
