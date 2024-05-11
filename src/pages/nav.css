@@ -6,7 +6,7 @@
 }
 
 nav{
-  background-color: #01890c;
+  background-color: #01890c00;
   width: 100%;
   position: fixed;
   z-index: 100;
@@ -172,9 +172,36 @@ nav{
   display: flex;
 }
 
+.MenuButtonPhoneDisplay{
+  display: none;
+}
+
+.menu__backdrop {
+  background-color: black;
+  height: 20rem;
+  width: 20rem;
+  z-index: 999;
+}
+
+.menu__backdrop--displaynone{
+  display: none;
+}
+
+
+
 @media(max-width:600px){
   .Nav_Down{
     display: none;
+  }
+  .MenuButton_Container,.fixed,.MenuButton_Container,.MenuButtonX_Container-appear{
+    display: none;
+  }
+  .MenuButtonPhoneDisplay{
+    display: block;
+    margin: 1rem;
+  }
+  .Nav_Left-Fixed,.Nav_Left{
+    margin: 0;
   }
 }
 

@@ -10,22 +10,16 @@ import CloseMenu from "../assests/CloseMenu.svg";
 
 function Nav() {
   const [scroll, setScroll] = useState(false);
-  const [MenuMobile, setMenuMobile] = useState(false);
+  const [menuMobileOpen, setMenuMobileOpen] = useState(false);
   const [windowSizeX, setWindowSize] = useState({ width: window.innerWidth });
 
-  function openMenuMobile(){
-    if (window.scrollX >= 600) {
-      setMenuMobile(true);
-      document.body.classList += "menu--open"
-    } else {
-      setMenuMobile(false);
-    }
-
-}
-
-function closeMenuMobile(){
-    document.body.classList.remove("menu--open")
-}
+  function openMenuMobile() {
+    console.log("works");
+    setMenuMobileOpen(true);
+  }
+  function closeMenuMobile() {
+    setMenuMobileOpen(false);
+  }
 
   function openMenu() {
     setScroll(false);
@@ -46,10 +40,8 @@ function closeMenuMobile(){
   function handleResize() {
     setWindowSize({ width: window.innerWidth });
     if (window.innerWidth <= 600) {
-      setMenuMobile(true);
-      setScroll(false)
+      setScroll(false);
     } else {
-      setMenuMobile(false);
     }
   }
 
@@ -66,12 +58,28 @@ function closeMenuMobile(){
   return (
     <nav>
       <div className="Nav_Top">
-        <div className={scroll ? "MenuButton_Container fixed" : "MenuButton_Container"}>
+        <div className="MenuButtonPhoneDisplay">
+          <button onClick={openMenuMobile} className="MenuButton">
+            <img src={Menu} className="MenuImg" alt="" />
+          </button>
+        </div>
+        <div
+          className={
+            scroll ? "MenuButton_Container fixed" : "MenuButton_Container"
+          }
+        >
+          {menuMobileOpen && <div className={"menu__backdrop"}><h1>hignjdfndjfgdfjgndfjgndfjgndfjgn</h1></div>}
           <button onClick={openMenu} className="MenuButton">
             <img src={Menu} className="MenuImg" alt="" />
           </button>
         </div>
-        <div className={scroll ? "MenuButtonX_Container-noappear" : "MenuButtonX_Container-appear"}>
+        <div
+          className={
+            scroll
+              ? "MenuButtonX_Container-noappear"
+              : "MenuButtonX_Container-appear"
+          }
+        >
           <button onClick={closeMenu} className="MenuButton">
             <img src={CloseMenu} className="MenuImgX" alt="" />
           </button>
@@ -82,7 +90,11 @@ function closeMenuMobile(){
           </a>
         </div>
         <div className="Nav_Center">
-          <input className={scroll ? 'SearchField_fixed' : 'SearchField'} type="text" placeholder="What are you looking for?" />
+          <input
+            className={scroll ? "SearchField_fixed" : "SearchField"}
+            type="text"
+            placeholder="What are you looking for?"
+          />
           <button className="SearchButton">
             <img src={Search} alt="" />
           </button>
@@ -93,12 +105,22 @@ function closeMenuMobile(){
           </Link>
         </div>
       </div>
-      <div className={scroll ? 'Nav_Down_fixed active' : 'Nav_Down' }>
-        <Link to={`/shop`} className="link__hover-effect">Shop</Link>
-        <Link to={`/PlantCare`} className="link__hover-effect">Plant Care</Link>
-        <Link to={`/`} className="link__hover-effect">Subscribe</Link>
-        <Link to={`/`} className="link__hover-effect">About Us</Link>
-        <Link to={`/`} className="link__hover-effect">Contact Us</Link>
+      <div className={scroll ? "Nav_Down_fixed active" : "Nav_Down"}>
+        <Link to={`/shop`} className="link__hover-effect">
+          Shop
+        </Link>
+        <Link to={`/PlantCare`} className="link__hover-effect">
+          Plant Care
+        </Link>
+        <Link to={`/`} className="link__hover-effect">
+          Subscribe
+        </Link>
+        <Link to={`/`} className="link__hover-effect">
+          About Us
+        </Link>
+        <Link to={`/`} className="link__hover-effect">
+          Contact Us
+        </Link>
       </div>
     </nav>
   );

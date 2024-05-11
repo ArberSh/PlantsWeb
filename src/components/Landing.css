@@ -9,7 +9,7 @@ body{
 }
 
 .SlideShow{
-    padding-top: 5%;
+    padding-top: 4%;
     height: 100vh;
     display: block;
 }
@@ -124,7 +124,7 @@ body{
 @media(max-width:800px){
     .Wallpaper_Container-Mobile{
         display: block;
-    padding-top: 4rem;
+    padding-top: 3rem;
     height: 150vh;
 }
 #FirstSlide{
