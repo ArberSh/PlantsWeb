@@ -6,7 +6,7 @@
 }
 
 nav{
-  background-color: #01890c00;
+  background-color: #01890c;
   width: 100%;
   position: fixed;
   z-index: 100;
@@ -177,10 +177,11 @@ nav{
 }
 
 .menu__backdrop {
-  background-color: black;
-  height: 20rem;
-  width: 20rem;
-  z-index: 999;
+  background-color: rgb(255, 0, 0); /* Example background color */
+  top: 0;
+  left: 0;
+  width: 100;
+  height: 100%;
 }
 
 .menu__backdrop--displaynone{
