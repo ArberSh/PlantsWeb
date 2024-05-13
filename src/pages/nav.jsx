@@ -16,6 +16,7 @@ function Nav() {
   function openMenuMobile() {
     console.log("works");
     setMenuMobileOpen(true);
+    console.log(menuMobileOpen);
   }
   function closeMenuMobile() {
     setMenuMobileOpen(false);
@@ -57,22 +58,25 @@ function Nav() {
 
   return (
     <nav>
-      <div className="Nav_Top">
+      <div className="Nav_Top"> 
+      
         <div className="MenuButtonPhoneDisplay">
-          <button onClick={openMenuMobile} className="MenuButton">
+         <button onClick={openMenuMobile} className="MenuButton">
             <img src={Menu} className="MenuImg" alt="" />
           </button>
         </div>
-        <div
-          className={
-            scroll ? "MenuButton_Container fixed" : "MenuButton_Container"
-          }
-        >
-          {menuMobileOpen && <div className={"menu__backdrop"}><h1>hignjdfndjfgdfjgndfjgndfjgndfjgn</h1></div>}
-          <button onClick={openMenu} className="MenuButton">
-            <img src={Menu} className="MenuImg" alt="" />
-          </button>
-        </div>
+        {menuMobileOpen && <div className={"menu__backdrop"}>MENU</div>}
+        <button onClick={openMenu} className="MenuButton"></button>
+      </div>
+      <div
+        className={
+          scroll ? "MenuButton_Container " : "MenuButton_Container fixed"
+        }
+      >
+        <button onClick={openMenu} className="MenuButton">
+          <img src={Menu} className="MenuImg" alt="" />
+        </button>
+
         <div
           className={
             scroll

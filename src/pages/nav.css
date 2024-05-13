@@ -180,7 +180,7 @@ nav{
   background-color: rgb(255, 0, 0); /* Example background color */
   top: 0;
   left: 0;
-  width: 100;
+  width: 100vw;
   height: 100%;
 }
 
@@ -194,7 +194,7 @@ nav{
   .Nav_Down{
     display: none;
   }
-  .MenuButton_Container,.fixed,.MenuButton_Container,.MenuButtonX_Container-appear{
+  .MenuButtonX_Container-appear{
     display: none;
   }
   .MenuButtonPhoneDisplay{

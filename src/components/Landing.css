@@ -124,7 +124,7 @@ body{
 @media(max-width:800px){
     .Wallpaper_Container-Mobile{
         display: block;
-    padding-top: 3rem;
+    padding-top: 4rem;
     height: 150vh;
 }
 #FirstSlide{
