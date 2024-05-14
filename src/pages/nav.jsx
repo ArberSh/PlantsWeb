@@ -17,9 +17,11 @@ function Nav() {
     console.log("works");
     setMenuMobileOpen(true);
     console.log(menuMobileOpen);
+    document.body.style.overflowY = "hidden";
   }
   function closeMenuMobile() {
     setMenuMobileOpen(false);
+    document.body.style.overflowY = "auto";
   }
 
   function openMenu() {
@@ -58,25 +60,44 @@ function Nav() {
 
   return (
     <nav>
-      <div className="Nav_Top"> 
-      
+      <div className="Nav_Top">
         <div className="MenuButtonPhoneDisplay">
-         <button onClick={openMenuMobile} className="MenuButton">
+          <button onClick={openMenuMobile} className="MenuButton">
             <img src={Menu} className="MenuImg" alt="" />
           </button>
+          {menuMobileOpen && (
+            <div className={"menu__backdrop"}>
+            <button className="MenuButton" onClick={closeMenuMobile}>
+                  <img className="MenuImg" src={CloseMenu}></img>
+                </button>
+              <div className="Nav_Link_Mobile">
+                <Link onClick={closeMenuMobile} to={`/shop`} className="link__hover-effect">
+                  Shop
+                </Link>
+                <Link onClick={closeMenuMobile} to={`/PlantCare`} className="link__hover-effect">
+                  Plant Care
+                </Link>
+                <Link onClick={closeMenuMobile} to={`/`} className="link__hover-effect">
+                  Subscribe
+                </Link>
+                <Link onClick={closeMenuMobile} to={`/`} className="link__hover-effect">
+                  About Us
+                </Link>
+                <Link onClick={closeMenuMobile} to={`/`} className="link__hover-effect">
+                  Contact Us
+                </Link>
+              </div>
+            </div>
+          )}
+          
         </div>
-        {menuMobileOpen && <div className={"menu__backdrop"}>MENU</div>}
-        <button onClick={openMenu} className="MenuButton"></button>
-      </div>
-      <div
-        className={
-          scroll ? "MenuButton_Container " : "MenuButton_Container fixed"
-        }
-      >
-        <button onClick={openMenu} className="MenuButton">
-          <img src={Menu} className="MenuImg" alt="" />
-        </button>
-
+        <div
+          className={
+            scroll ? "MenuButton_Container fixed NotPhone" : "MenuButton_Container NotPhone"
+          }
+        ><button onClick={openMenu} className="MenuButton">
+            <img src={Menu} className="MenuImg" alt="" />
+          </button></div>
         <div
           className={
             scroll
