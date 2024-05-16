@@ -4,75 +4,74 @@
   box-sizing: border-box;
 }
 
-.black{
+.black {
   color: black;
 }
 
-.Shop_Container{
+.Shop_Container {
   padding: 10rem 2rem 0 2rem;
   display: flex;
   justify-content: space-evenly;
 }
 
-.Filter{
+.Filter {
   margin-top: 0.6rem;
 }
 
-
-.Filter_Container{
+.Filter_Container {
   display: flex;
   margin-left: 2rem;
   flex-direction: column;
   width: 14%;
 }
 
-.Filter_Container h1{
+.Filter_Container h1 {
   margin-bottom: 1rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.Input_Container{
+.Input_Container {
   display: grid;
-  grid-template-columns: repeat(2,1.4rem);
-  padding:0.3rem 0 ;
+  grid-template-columns: repeat(2, 1.4rem);
+  padding: 0.3rem 0;
 }
 
-.Filter label{
-font-family: system-ui, sans-serif;
-font-size: 1.2rem;
-line-height: 1.1;
-width: 10rem;
+.Filter label {
+  font-family: system-ui, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  width: 10rem;
 }
-.Filter input{
--webkit-appearance: none;
-appearance: none;
-background-color: #fff;
-margin: 0;
-font: inherit;
-color: currentColor;
-width: 1.15em;
-height: 1.15em;
-border: 0.09em solid rgb(177, 177, 177);
-transform: translateY(-0.075em);
-display: grid;
-place-content: center;
-}
-
-.Filter input::before{
-content: "";
-background-color: rgb(0, 196, 20);
-width: 0.75rem;
-height: 0.75rem;
-transform: scale(0);
-transition: 120ms transform ease-in-out;
-box-shadow: inset 1em 1em var(--form-control-color);
+.Filter input {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.09em solid rgb(177, 177, 177);
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
 }
 
-.Filter input:checked:before{
+.Filter input::before {
+  content: "";
+  background-color: rgb(0, 196, 20);
+  width: 0.75rem;
+  height: 0.75rem;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+.Filter input:checked:before {
   transform: scale(1);
 }
 
-.ClearAll{
+.ClearAll {
   width: 100%;
   max-width: 6rem;
   margin: 0 2rem;
@@ -86,16 +85,16 @@ box-shadow: inset 1em 1em var(--form-control-color);
   cursor: pointer;
 }
 
-.ClearAll:active{
+.ClearAll:active {
   background-color: rgb(248, 248, 248);
 }
 
-.Plants{
+.Plants {
   width: 90%;
   margin-left: 2rem;
 }
 
-.SortBy-Container{
+.SortBy-Container {
   margin-left: 2rem;
   width: 90%;
   display: flex;
@@ -103,47 +102,45 @@ box-shadow: inset 1em 1em var(--form-control-color);
   justify-content: space-between;
 }
 
-.Filter-Mobile{
+.Filter-Mobile {
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
 
-.Filter-Mobile button{
+.Filter-Mobile button {
   width: 4rem;
   background-color: #fff;
   border: none;
   color: black;
   font-size: 20px;
   cursor: pointer;
-
 }
 
-.SortBy select{
+.SortBy select {
   max-width: 10rem;
   height: 2rem;
   font-size: 16px;
 }
 
-
-.Plants_Container{
+.Plants_Container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.Plants_Container--ForPlants{
+.Plants_Container--ForPlants {
   margin: 1rem;
 }
 
-.Page_Container{
+.Page_Container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 2rem 0;
 }
 
-.Page_Container button{
+.Page_Container button {
   margin: 0 0.6rem;
   border: none;
   background-color: white;
@@ -151,7 +148,7 @@ box-shadow: inset 1em 1em var(--form-control-color);
   cursor: pointer;
 }
 
-.Page_Container button:hover{
+.Page_Container button:hover {
   color: rgb(43, 196, 43);
 }
 
@@ -159,16 +156,60 @@ box-shadow: inset 1em 1em var(--form-control-color);
   text-decoration: underline;
 }
 
+.Filter_Container_Mobile {
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+}
 
-@media(max-width:840px){
- .Filter_Container{
-  display: none;
- }
- .Plants{
-  margin-left: 0;
- }
- .SortBy select{
-  width: 100%;
-  max-width: 6rem;
- }
+.FilterContainer-Better{
+  padding-top:4rem ;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+
+.MobileInput{
+  width: 2em;
+  height: 2em;
+}
+
+.MobileInput label{
+  font-size: 20px;
+}
+
+.MenuImg-Filter{
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  left: 0;
+  filter: invert(1);
+  cursor: pointer;
+  margin-top: 4rem;
+}
+
+@media (max-width: 840px) {
+  .Filter_Container {
+    display: none;
+  }
+  .Plants {
+    margin-left: 0;
+  }
+  .SortBy select {
+    width: 100%;
+    max-width: 6rem;
+  }
+  @media (max-width: 600px) {
+    .Shop_Container {
+      padding-top: 6rem;
+    }
+  }
 }

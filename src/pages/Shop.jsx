@@ -3,6 +3,7 @@ import "../pages/Shop.css";
 import Plants from "../components/Plants";
 import axios from "axios";
 import Filter from "../assests/filter-solid.svg"
+import CloseMenu from "../assests/CloseMenu.svg"
 
 function Shop() {
   const [dataPlant, setData] = useState("");
@@ -12,8 +13,29 @@ function Shop() {
   const [cycle, setcycle] = useState();
   const [other, setother] = useState();
   const [activeButton, setActiveButton] = useState(1);
-  const [Loading,setLoading] = useState(true)
-  //fix 
+  const [windowSizeX, setWindowSize] = useState({ width: window.innerWidth });
+  const [AddFilter,SetAddFilter] = useState(false);
+  const [OpenFilter,SetOpenFilter] = useState(false)
+
+
+  function handleResize() {
+    setWindowSize({ width: window.innerWidth });
+    if (window.innerWidth <= 840) {
+      SetAddFilter(true);
+      console.log(AddFilter)
+    } else {
+      SetAddFilter(false)
+      console.log(AddFilter)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     async function fetchPosts(number, sunlight, watering, cycle, other) {
@@ -157,7 +179,7 @@ function Shop() {
           </button>
           <div className="Filter SunLight">
             <h2>SunLight</h2>
-            <div className="Input_Container">
+            <div className="Input_Container MobileInput">
               <input
                 onClick={radioButton}
                 type="radio"
@@ -166,7 +188,7 @@ function Shop() {
               />
               <label>Full Shade</label>
             </div>
-            <div className="Input_Container">
+            <div className="Input_Container MobileInput">
               <input
                 onClick={radioButton}
                 type="radio"
@@ -175,7 +197,7 @@ function Shop() {
               />
               <label>Part Shade</label>
             </div>
-            <div className="Input_Container">
+            <div className="Input_Container MobileInput">
               <input
                 onClick={radioButton}
                 type="radio"
@@ -187,7 +209,7 @@ function Shop() {
           </div>
           <div className="Filter Watering">
             <h2>Watering</h2>
-            <div className="Input_Container">
+            <div className="Input_Container MobileInput">
               <input
                 onClick={radioButton}
                 type="radio"
@@ -196,7 +218,7 @@ function Shop() {
               />
               <label>Frequent</label>
             </div>
-            <div className="Input_Container">
+            <div className="Input_Container MobileInput">
               <input
                 onClick={radioButton}
                 type="radio"
@@ -205,7 +227,7 @@ function Shop() {
               />
               <label>Average</label>
             </div>
-            <div className="Input_Container">
+            <div className="Input_Container MobileInput">
               <input
                 onClick={radioButton}
                 type="radio"
@@ -214,7 +236,7 @@ function Shop() {
               />
               <label>Minimum</label>
             </div>
-            <div className="Input_Container">
+            <div className="Input_Container MobileInput">
               <input
                 onClick={radioButton}
                 type="radio"
@@ -226,7 +248,7 @@ function Shop() {
           </div>
           <div className="Filter Cycle">
             <h2>Cycle</h2>
-            <div className="Input_Container">
+            <div className="Input_Container MobileInput">
               <input
                 onClick={radioButton}
                 type="radio"
@@ -235,7 +257,7 @@ function Shop() {
               />
               <label>Perennial</label>
             </div>
-            <div className="Input_Container">
+            <div className="Input_Container MobileInput">
               <input
                 onClick={radioButton}
                 type="radio"
@@ -244,7 +266,7 @@ function Shop() {
               />
               <label>Annual</label>
             </div>
-            <div className="Input_Container">
+            <div className="Input_Container MobileInput">
               <input
                 onClick={radioButton}
                 type="radio"
@@ -253,7 +275,7 @@ function Shop() {
               />
               <label>Biennial</label>
             </div>
-            <div className="Input_Container">
+            <div className="Input_Container MobileInput">
               <input
                 onClick={radioButton}
                 type="radio"
@@ -265,7 +287,7 @@ function Shop() {
           </div>
           <div className="Filter Other">
             <h2>Other</h2>
-            <div className="Input_Container">
+            <div className="Input_Container MobileInput">
               <input
                 onClick={radioButton}
                 type="radio"
@@ -274,7 +296,7 @@ function Shop() {
               />
               <label>Edible</label>
             </div>
-            <div className="Input_Container">
+            <div className="Input_Container MobileInput">
               <input
                 onClick={radioButton}
                 type="radio"
@@ -288,10 +310,147 @@ function Shop() {
         <div className="Plants">
         <h1 style={{ fontSize: "36px", marginLeft: "1rem" }}>Plants</h1>
           <div className="SortBy-Container">
-            <div className="Filter-Mobile">
+          {AddFilter && <div className="Filter-Mobile">
               <img style={{width:"1rem"}} src={Filter}/>
-              <button className="Filter-Button-Mobile">Filter</button>
+    
+              <button onClick={ () => {SetOpenFilter(true);document.body.style.overflowY = "hidden"; }} className="Filter-Button-Mobile">Filter</button>
+            </div> }
+            {OpenFilter && <div className="Filter_Container_Mobile">
+            <button onClick={() => {SetOpenFilter(false) ;document.body.style.overflowY = "auto"}}><img className="MenuImg-Filter" src={CloseMenu}></img></button>
+            <div className="FilterContainer-Better">
+          <div className="Filter SunLight">
+            <h2>SunLight</h2>
+            <div className="Input_Container MobileInput">
+              <input
+                onClick={radioButton}
+                type="radio"
+                name="sunlight"
+                value="full_shade"
+              />
+              <label>Full Shade</label>
             </div>
+            <div className="Input_Container MobileInput">
+              <input
+                onClick={radioButton}
+                type="radio"
+                name="sunlight"
+                value="part_shade"
+              />
+              <label>Part Shade</label>
+            </div>
+            <div className="Input_Container MobileInput">
+              <input
+                onClick={radioButton}
+                type="radio"
+                name="sunlight"
+                value="full_sun"
+              />
+              <label>Full Sun</label>
+            </div>
+          </div>
+          <div className="Filter Watering">
+            <h2>Watering</h2>
+            <div className="Input_Container MobileInput">
+              <input
+                onClick={radioButton}
+                type="radio"
+                name="watering"
+                value="frequent"
+              />
+              <label>Frequent</label>
+            </div>
+            <div className="Input_Container MobileInput">
+              <input
+                onClick={radioButton}
+                type="radio"
+                name="watering"
+                value="average"
+              />
+              <label>Average</label>
+            </div>
+            <div className="Input_Container MobileInput">
+              <input
+                onClick={radioButton}
+                type="radio"
+                name="watering"
+                value="minimum"
+              />
+              <label>Minimum</label>
+            </div>
+            <div className="Input_Container MobileInput">
+              <input
+                onClick={radioButton}
+                type="radio"
+                name="watering"
+                value="none"
+              />
+              <label>None</label>
+            </div>
+          </div>
+          <div className="Filter Cycle">
+            <h2>Cycle</h2>
+            <div className="Input_Container MobileInput">
+              <input
+                onClick={radioButton}
+                type="radio"
+                name="cycle"
+                value="perennial"
+              />
+              <label>Perennial</label>
+            </div>
+            <div className="Input_Container MobileInput">
+              <input
+                onClick={radioButton}
+                type="radio"
+                name="cycle"
+                value="annual"
+              />
+              <label>Annual</label>
+            </div>
+            <div className="Input_Container MobileInput">
+              <input
+                onClick={radioButton}
+                type="radio"
+                name="cycle"
+                value="biennial"
+              />
+              <label>Biennial</label>
+            </div>
+            <div className="Input_Container MobileInput">
+              <input
+                onClick={radioButton}
+                type="radio"
+                name="cycle"
+                value="biannual"
+              />
+              <label>Biannual</label>
+            </div>
+          </div>
+          <div className="Filter Other">
+            <h2>Other</h2>
+            <div className="Input_Container MobileInput">
+              <input
+                onClick={radioButton}
+                type="radio"
+                name="other"
+                value="edible"
+              />
+              <label>Edible</label>
+            </div>
+            <div className="Input_Container MobileInput">
+              <input
+                onClick={radioButton}
+                type="radio"
+                name="other"
+                value="indoor"
+              />
+              <label>Indoor</label>
+            </div>
+          </div>
+          <button onClick={refreshPage} className="ClearAll">
+            Clear All
+          </button></div>
+        </div>}
             <div className="SortBy" style={{ marginRight: "4rem" }}>
               <label style={{ fontSize: "18px", marginRight: "0.4rem" }}>
                 Sort By
