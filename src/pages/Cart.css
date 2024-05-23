@@ -1,0 +1,19 @@
+.Cart_Container{
+    background-color: gray;
+    padding-top:10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Price_Each_Plant{
+    background-color: aliceblue;
+    width: 10rem;
+    height: 10rem;
+}
+
+.Price-Container{
+    width: 10rem;
+    height: 10rem;
+    background-color: bisque;
+}
