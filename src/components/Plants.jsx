@@ -2,13 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../components/Plants.css";
 
-function Plants({ data }) {
+function Plants({ data ,incrementCartItem}) {
   const [CartItem,setCartItem] = useState(0)
   
 
-  function ChangeCart(){
-    setCartItem((number) => number +1)
-  }
   useEffect(() =>{
     console.log(CartItem)
   },[CartItem])
@@ -35,7 +32,7 @@ function Plants({ data }) {
           <button className="MoreInfo_Button">More Info</button>
           </Link>
           <a className="ButtonLink">
-          <button onClick={ChangeCart} className="AddtoCart">Add to Cart</button>
+          <button onClick={incrementCartItem} className="AddtoCart">Add to Cart</button>
           </a>
         </div>
       </div>

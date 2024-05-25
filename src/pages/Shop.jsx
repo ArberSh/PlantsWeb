@@ -5,7 +5,7 @@ import axios from "axios";
 import Filter from "../assests/filter-solid.svg"
 import CloseMenu from "../assests/CloseMenu.svg"
 
-function Shop() {
+function Shop(incrementCartItem) {
   const [dataPlant, setData] = useState("");
   const [number, setNumber] = useState(0);
   const [sunlight, setsunlight] = useState();
@@ -16,7 +16,6 @@ function Shop() {
   const [windowSizeX, setWindowSize] = useState({ width: window.innerWidth });
   const [AddFilter,SetAddFilter] = useState(false);
   const [OpenFilter,SetOpenFilter] = useState(false)
-
 
   function handleResize() {
     setWindowSize({ width: window.innerWidth });
@@ -168,7 +167,9 @@ function Shop() {
         {index + 1}
       </button>
     )
+    
   );
+
   return (
     <div className="Shop">
       <div className="Shop_Container">
@@ -479,7 +480,7 @@ function Shop() {
                     className="Plants_Container--ForPlants"
                     key={filteredData.id}
                   >
-                    <Plants data={filteredData} />
+                    <Plants data={filteredData} incrementCartItem={incrementCartItem} />
                   </div>
                 ))
             ) : (

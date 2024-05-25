@@ -8,10 +8,12 @@ import { Link } from "react-router-dom";
 import MobileLogo from "../assests/LogoMobile.png";
 import CloseMenu from "../assests/CloseMenu.svg";
 
-function Nav() {
+function Nav({ cartItem }) {
   const [scroll, setScroll] = useState(false);
   const [menuMobileOpen, setMenuMobileOpen] = useState(false);
   const [windowSizeX, setWindowSize] = useState({ width: window.innerWidth });
+
+  console.log("Nav:" + cartItem)
 
   function openMenuMobile() {
     console.log("works");
