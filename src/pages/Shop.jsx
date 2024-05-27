@@ -5,7 +5,7 @@ import axios from "axios";
 import Filter from "../assests/filter-solid.svg"
 import CloseMenu from "../assests/CloseMenu.svg"
 
-function Shop(incrementCartItem) {
+function Shop({incrementCartItem}) {
   const [dataPlant, setData] = useState("");
   const [number, setNumber] = useState(0);
   const [sunlight, setsunlight] = useState();

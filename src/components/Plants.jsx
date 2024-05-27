@@ -3,12 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import "../components/Plants.css";
 
 function Plants({ data ,incrementCartItem}) {
-  const [CartItem,setCartItem] = useState(0)
   
 
-  useEffect(() =>{
-    console.log(CartItem)
-  },[CartItem])
   return (
     <div>
       {data.default_image.thumbnail ? (<div className="Plant_Container ">
