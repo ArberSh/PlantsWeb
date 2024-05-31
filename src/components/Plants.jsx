@@ -4,7 +4,7 @@ import "../components/Plants.css";
 
 function Plants({ data ,incrementCartItem}) {
   
-
+console.log(incrementCartItem)
   return (
     <div>
       {data.default_image.thumbnail ? (<div className="Plant_Container ">
