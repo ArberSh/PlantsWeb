@@ -8,12 +8,12 @@ import { Link } from "react-router-dom";
 import MobileLogo from "../assests/LogoMobile.png";
 import CloseMenu from "../assests/CloseMenu.svg";
 
-function Nav({ cartItem }) {
+function Nav({CartItem }) {
   const [scroll, setScroll] = useState(false);
   const [menuMobileOpen, setMenuMobileOpen] = useState(false);
   const [windowSizeX, setWindowSize] = useState({ width: window.innerWidth });
 
-  console.log("Nav:" + cartItem)
+  console.log("Nav:" + CartItem)
 
   function openMenuMobile() {
     console.log("works");
@@ -112,9 +112,9 @@ function Nav({ cartItem }) {
           </button>
         </div>
         <div className={scroll ? "Nav_Left-Fixed" : "Nav_Left"}>
-          <a href="/">
+          <Link to="/">
             <img className="LogoNav" src={MobileLogo} alt="Logo" />
-          </a>
+          </Link>
         </div>
         <div className="Nav_Center">
           <input
@@ -128,6 +128,7 @@ function Nav({ cartItem }) {
         </div>
         <div className="Nav_Right">
           <Link to={"/Cart"}>
+          <div className="red_circle">{CartItem}</div>
             <img className="LogoCart" src={LogoCart} alt="" />
           </Link>
         </div>

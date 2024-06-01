@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './MoreInfo.css';
 
-function MoreInfo() {
+function MoreInfo({incrementCartItem}) {
   const { id } = useParams();
   const [Plant, setPlant] = useState();
 
@@ -51,8 +51,7 @@ function MoreInfo() {
                 <p className='black'>{Plant.description}</p>
               </div>
               <div className='Button_MoreInfo'>
-                <input type="number" name="" id="" max="99" min="0" />
-                <button>Add to Cart</button>
+                <button onClick={incrementCartItem}>Add to Cart</button>
               </div>
             </div>
           </>

@@ -16,16 +16,17 @@ function App() {
 
   const incrementCartItem = () => {
     setCartItem((prevCount) => prevCount + 1);
+    console.log(CartItem)
   };
 
   return (
     <Router>
       <>
-        <Nav />
+        <Nav CartItem={CartItem}/> 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop incrementCartItem={incrementCartItem}/> }  />
-          <Route path="/MoreInfo/:id" element={<MoreInfo />} />
+          <Route path="/MoreInfo/:id" element={<MoreInfo incrementCartItem={incrementCartItem} />} />
           <Route path="/PlantCare" element={<PlantCare />} />
           <Route path="/GuidePlant/:id" element={<GuidingPlant />} />
           <Route path="/Cart" element={<Cart />} />
