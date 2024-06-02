@@ -11,25 +11,46 @@ import Cart from './pages/Cart';
 import './App.css';
 
 function App() {
+  const [CartItems, setCartItems] = useState([]);
+  
+  function incrementCartItem(plant) {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find(item => item.id === plant.id);
+      if (existingItem) {
+        return prevItems.map(item =>
+          item.id === plant.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        return [...prevItems, { ...plant, quantity: 1 }];
+      }
+    });
+  }
 
-  const[CartItem,setCartItem] = useState(0)
+  function changeQuantity(plant, quantity) {
+    setCartItems(prevItems =>
+      prevItems.map(item =>
+        item.id === plant.id ? { ...item, quantity: quantity } : item
+      )
+    );
+  }
 
-  const incrementCartItem = () => {
-    setCartItem((prevCount) => prevCount + 1);
-    console.log(CartItem)
-  };
+  function removeItem(plant) {
+    setCartItems(prevItems => prevItems.filter(item => item.id !== plant.id));
+  }
 
   return (
     <Router>
       <>
-        <Nav CartItem={CartItem}/> 
+      <Nav cartItemCount={CartItems.reduce((total, item) => total + item.quantity, 0)} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop incrementCartItem={incrementCartItem}/> }  />
+          <Route path="/shop" element={<Shop incrementCartItem={incrementCartItem} />} />
           <Route path="/MoreInfo/:id" element={<MoreInfo incrementCartItem={incrementCartItem} />} />
           <Route path="/PlantCare" element={<PlantCare />} />
           <Route path="/GuidePlant/:id" element={<GuidingPlant />} />
-          <Route path="/Cart" element={<Cart />} />
+          <Route path="/Cart" element={<Cart CartItems={CartItems} cartItems={CartItems} changeQuantity={changeQuantity} removeItem={removeItem} />} />
         </Routes>
         <Contact />
       </>

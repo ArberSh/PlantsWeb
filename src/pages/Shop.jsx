@@ -39,7 +39,7 @@ function Shop({incrementCartItem}) {
   useEffect(() => {
     async function fetchPosts(number, sunlight, watering, cycle, other) {
       try {
-        let apiUrl = `https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704&page=${number}`;
+        let apiUrl = `https://perenual.com/api/species-list?key=sk-kC5f65ef2b98f36014519&page=${number}`;
         if (watering !== undefined) {
           apiUrl += `&watering=${watering}`;
         }

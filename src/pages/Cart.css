@@ -1,19 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .Cart_Container{
-    background-color: gray;
-    padding-top:10rem;
+    padding:10rem 1rem 2rem 1rem;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
+    font-family: Arial, sans-serif;
 }
 
-.Price_Each_Plant{
-    background-color: aliceblue;
-    width: 10rem;
-    height: 10rem;
+.Plant-Price_Container{
+    width: 100%;
+}
+
+.Plant_Container-Cart{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    border: 1px solid  rgb(225, 225, 225);
+    margin-bottom: 1rem;
+    flex-direction:row ;
+}
+
+.Plant_Image{
+    padding: 1rem;
+}
+
+.Information_Plant{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.RemoveImage{
+    width: 2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-bottom:2rem;
+}
+
+.Information_Plant input{
+    margin-top: 2rem;
+    width: 4rem;
+    height: 2rem;
+    padding: 0.2rem;
+    font-size: 16px;
 }
 
 .Price-Container{
-    width: 10rem;
-    height: 10rem;
-    background-color: bisque;
+    margin-left: 1rem;
+    padding: 1rem;
+    width:100%;
+    max-width: 30rem;
+    height: 30rem;
+}
+
+.Cart-Empty-Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 40vh;
 }
