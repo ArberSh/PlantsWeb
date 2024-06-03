@@ -5,7 +5,6 @@ import "../components/Plants.css";
 function Plants({ data, incrementCartItem }) {
   return (
     <div>
-      {data.default_image.thumbnail ? (
         <div className="Plant_Container">
           <div className="Image_Plant">
             <img
@@ -26,13 +25,7 @@ function Plants({ data, incrementCartItem }) {
             </button>
           </div>
         </div>
-      ) : (
-        <>
-          <div className="plant__img--skeleton"></div>
-          <div className="skeleton plant__title--skeleton"></div>
-          <div className="skeleton plant__price--skeleton"></div>
-        </>
-      )}
+     
     </div>
   );
 }

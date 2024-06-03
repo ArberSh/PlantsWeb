@@ -501,13 +501,3 @@ function Shop({incrementCartItem}) {
 }
 
 export default Shop;
-
-// {Array.isArray(dataPlant) ? ( //duhet t vendosesh si kusht pasi nuk afisho direkt api.
-//               dataPlant.map((element) => (//ktu beje filter
-//                 <div key={element.idMeal}>
-//                   <Plants data={element} />
-//                 </div>
-//               ))
-//             ) : (
-//               <p>Data is not an array.</p>
-//             )}

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Logo from "../assests/Logo.png";
 import "./nav.css";
 import LogoCart from "../assests/Cart.svg";
 import Search from "../assests/Search.svg";
@@ -7,20 +6,18 @@ import Menu from "../assests/menu.svg";
 import { Link, useNavigate } from "react-router-dom";
 import MobileLogo from "../assests/LogoMobile.png";
 import CloseMenu from "../assests/CloseMenu.svg";
-import axios from "axios";
 
-function Nav({cartItemCount}) {
+function Nav({ cartItemCount }) {
   const [scroll, setScroll] = useState(false);
   const [menuMobileOpen, setMenuMobileOpen] = useState(false);
   const [windowSizeX, setWindowSize] = useState({ width: window.innerWidth });
-  const [Input,setInput] = useState()
+  const [Input, setInput] = useState();
 
-  console.log("Nav:" + cartItemCount)
   const navigate = useNavigate();
 
   const Enter = (e) => {
     if (e.key === "Enter") {
-      Click()
+      Click();
     }
   };
 
@@ -69,15 +66,13 @@ function Nav({cartItemCount}) {
     };
   }, []);
 
-
   const Click = () => {
-    if(Input == 0){
-      console.log("error")
-    }else{
-      navigate(`/shop/${Input}`)
-      alert("Not working because of API")
+    if (Input == 0) {
+      console.log("error");
+    } else {
+      alert("Not working because of API");
     }
-    console.log(Input);  //Not working because of API
+    console.log(Input); //Not working because of API
   };
 
   return (
@@ -89,41 +84,67 @@ function Nav({cartItemCount}) {
           </button>
           {menuMobileOpen && (
             <div className={"menu__backdrop"}>
-            <button className="MenuButton" onClick={closeMenuMobile}>
-                  <img className="MenuImg" src={CloseMenu}></img>
-                </button>
-              <div className="Nav_Link_Mobile"> 
-                <Link onClick={closeMenuMobile} to={`/`} className="link__hover-effect">
+              <button className="MenuButton" onClick={closeMenuMobile}>
+                <img className="MenuImg" src={CloseMenu}></img>
+              </button>
+              <div className="Nav_Link_Mobile">
+                <Link
+                  onClick={closeMenuMobile}
+                  to={`/`}
+                  className="link__hover-effect"
+                >
                   HomePage
                 </Link>
-                <Link onClick={closeMenuMobile} to={`/shop`} className="link__hover-effect">
+                <Link
+                  onClick={closeMenuMobile}
+                  to={`/shop`}
+                  className="link__hover-effect"
+                >
                   Shop
                 </Link>
-                <Link onClick={closeMenuMobile} to={`/PlantCare`} className="link__hover-effect">
+                <Link
+                  onClick={closeMenuMobile}
+                  to={`/PlantCare`}
+                  className="link__hover-effect"
+                >
                   Plant Care
                 </Link>
-                <Link onClick={closeMenuMobile} to={`/`} className="link__hover-effect">
+                <Link
+                  onClick={closeMenuMobile}
+                  to={`/`}
+                  className="link__hover-effect"
+                >
                   Subscribe
                 </Link>
-                <Link onClick={closeMenuMobile} to={`/`} className="link__hover-effect">
+                <Link
+                  onClick={closeMenuMobile}
+                  to={`/`}
+                  className="link__hover-effect"
+                >
                   About Us
                 </Link>
-                <Link onClick={closeMenuMobile} to={`/`} className="link__hover-effect">
+                <Link
+                  onClick={closeMenuMobile}
+                  to={`/`}
+                  className="link__hover-effect"
+                >
                   Contact Us
                 </Link>
-               
               </div>
             </div>
           )}
-          
         </div>
         <div
           className={
-            scroll ? "MenuButton_Container fixed NotPhone" : "MenuButton_Container NotPhone"
+            scroll
+              ? "MenuButton_Container fixed NotPhone"
+              : "MenuButton_Container NotPhone"
           }
-        ><button onClick={openMenu} className="MenuButton">
+        >
+          <button onClick={openMenu} className="MenuButton">
             <img src={Menu} className="MenuImg" alt="" />
-          </button></div>
+          </button>
+        </div>
         <div
           className={
             scroll
@@ -155,13 +176,12 @@ function Nav({cartItemCount}) {
         </div>
         <div className="Nav_Right">
           <Link to={"/Cart"}>
-          <div className="red_circle">{cartItemCount}</div>
+            <div className="red_circle">{cartItemCount}</div>
             <img className="LogoCart" src={LogoCart} alt="" />
           </Link>
         </div>
       </div>
       <div className={scroll ? "Nav_Down_fixed active" : "Nav_Down"}>
-      
         <Link to={`/shop`} className="link__hover-effect">
           Shop
         </Link>

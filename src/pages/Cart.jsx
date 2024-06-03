@@ -85,7 +85,7 @@ function Cart({ cartItems, changeQuantity, removeItem }) {
               <h1>{tax.toFixed(2)}$</h1>
               <h1>20.00$</h1>
               <h1 style={{ marginTop: "2rem" }}>{TotalPrice.toFixed(2)}$</h1>
-              <button onClick={Alarm}>Checkout</button>
+              <button onClick={Alarm}>Checkout Complete</button>
             </div>
           </div>
         </>
