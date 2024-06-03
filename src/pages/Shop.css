@@ -103,7 +103,7 @@
 }
 
 .Filter-Mobile {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -196,6 +196,8 @@
   margin-top: 4rem;
 }
 
+
+
 @media (max-width: 840px) {
   .Filter_Container {
     display: none;
@@ -210,6 +212,9 @@
   @media (max-width: 600px) {
     .Shop_Container {
       padding-top: 6rem;
+    }
+    .Filter-Mobile{
+      display: flex;
     }
   }
 }

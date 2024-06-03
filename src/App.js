@@ -46,7 +46,7 @@ function App() {
       <Nav cartItemCount={CartItems.reduce((total, item) => total + item.quantity, 0)} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop incrementCartItem={incrementCartItem} />} />
+          <Route path="/shop/:term" element={<Shop incrementCartItem={incrementCartItem} />} />
           <Route path="/MoreInfo/:id" element={<MoreInfo incrementCartItem={incrementCartItem} />} />
           <Route path="/PlantCare" element={<PlantCare />} />
           <Route path="/GuidePlant/:id" element={<GuidingPlant />} />

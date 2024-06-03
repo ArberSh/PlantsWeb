@@ -3,6 +3,7 @@ import "./Landing.css";
 import Arrow from "../assests/right-arrow.png";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from "react-router-dom";
 
 AOS.init();
 
@@ -87,7 +88,9 @@ function Landing() {
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel,
                 fugiat.
               </p>
+              <Link to="/shop">
               <button>Shop Now</button>
+              </Link>
             </div>
           </div>
           <div id="SecondSlide" className="Slide">
@@ -97,7 +100,9 @@ function Landing() {
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel,
                 fugiat.
               </p>
+              <Link to="/PlantCare">
               <button>Let's Guide</button>
+              </Link>
             </div>
           </div>
           <div id="ThirdSlide" className="Slide">
@@ -120,7 +125,9 @@ function Landing() {
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel,
                 fugiat.
               </p>
+              <Link to="/shop">
               <button>Shop Now</button>
+              </Link>
             </div>
           </div>
           <div  id="SecondSlide">
@@ -130,7 +137,9 @@ function Landing() {
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel,
                 fugiat.
               </p>
-              <button>Shop Now</button>
+              <Link to="/PlantCare">
+              <button>Let's Guide</button>
+              </Link>
             </div>
           </div>
           <div id="ThirdSlide">
@@ -140,7 +149,7 @@ function Landing() {
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel,
                 fugiat.
               </p>
-              <button>Shop Now</button>
+              <button>Subscribe</button>
             </div>
           </div>
       </div>

@@ -4,6 +4,7 @@ import Plants from "../components/Plants";
 import axios from "axios";
 import Filter from "../assests/filter-solid.svg"
 import CloseMenu from "../assests/CloseMenu.svg"
+import { useParams } from "react-router-dom";
 
 function Shop({incrementCartItem}) {
   const [dataPlant, setData] = useState("");
@@ -14,32 +15,29 @@ function Shop({incrementCartItem}) {
   const [other, setother] = useState();
   const [activeButton, setActiveButton] = useState(1);
   const [windowSizeX, setWindowSize] = useState({ width: window.innerWidth });
-  const [AddFilter,SetAddFilter] = useState(false);
   const [OpenFilter,SetOpenFilter] = useState(false)
+  const [plant, setPlant] = useState([]);
 
-  function handleResize() {
-    setWindowSize({ width: window.innerWidth });
-    if (window.innerWidth <= 840) {
-      SetAddFilter(true);
-      console.log(AddFilter)
-    } else {
-      SetAddFilter(false)
-      console.log(AddFilter)
-    }
-  }
+  const { term } = useParams();
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+    
+    async function fetchPlant() {
+      try {
+        const { data } = await axios.get(`https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704=${term}`);
+        setPlant(data[0]);
+      } catch (error) {
+        console.log('Error', error);
+      }
+    }
+    fetchPlant();
+  }
+  , [term]); //Not working because of API
 
   useEffect(() => {
     async function fetchPosts(number, sunlight, watering, cycle, other) {
       try {
-        let apiUrl = `https://perenual.com/api/species-list?key=sk-kC5f65ef2b98f36014519&page=${number}`;
+        let apiUrl = `https://perenual.com/api/species-list?key=sk-qcAS65a265f29c4111704&page=${number}`;
         if (watering !== undefined) {
           apiUrl += `&watering=${watering}`;
         }
@@ -311,11 +309,11 @@ function Shop({incrementCartItem}) {
         <div className="Plants">
         <h1 style={{ fontSize: "36px", marginLeft: "1rem" }}>Plants</h1>
           <div className="SortBy-Container">
-          {AddFilter && <div className="Filter-Mobile">
+          <div className="Filter-Mobile">
               <img style={{width:"1rem"}} src={Filter}/>
     
               <button onClick={ () => {SetOpenFilter(true);document.body.style.overflowY = "hidden"; }} className="Filter-Button-Mobile">Filter</button>
-            </div> }
+            </div> 
             {OpenFilter && <div className="Filter_Container_Mobile">
             <button onClick={() => {SetOpenFilter(false) ;document.body.style.overflowY = "auto"}}><img className="MenuImg-Filter" src={CloseMenu}></img></button>
             <div className="FilterContainer-Better">

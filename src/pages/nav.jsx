@@ -4,16 +4,25 @@ import "./nav.css";
 import LogoCart from "../assests/Cart.svg";
 import Search from "../assests/Search.svg";
 import Menu from "../assests/menu.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MobileLogo from "../assests/LogoMobile.png";
 import CloseMenu from "../assests/CloseMenu.svg";
+import axios from "axios";
 
 function Nav({cartItemCount}) {
   const [scroll, setScroll] = useState(false);
   const [menuMobileOpen, setMenuMobileOpen] = useState(false);
   const [windowSizeX, setWindowSize] = useState({ width: window.innerWidth });
+  const [Input,setInput] = useState()
 
   console.log("Nav:" + cartItemCount)
+  const navigate = useNavigate();
+
+  const Enter = (e) => {
+    if (e.key === "Enter") {
+      Click()
+    }
+  };
 
   function openMenuMobile() {
     console.log("works");
@@ -60,6 +69,17 @@ function Nav({cartItemCount}) {
     };
   }, []);
 
+
+  const Click = () => {
+    if(Input == 0){
+      console.log("error")
+    }else{
+      navigate(`/shop/${Input}`)
+      alert("Not working because of API")
+    }
+    console.log(Input);  //Not working because of API
+  };
+
   return (
     <nav>
       <div className="Nav_Top">
@@ -72,7 +92,10 @@ function Nav({cartItemCount}) {
             <button className="MenuButton" onClick={closeMenuMobile}>
                   <img className="MenuImg" src={CloseMenu}></img>
                 </button>
-              <div className="Nav_Link_Mobile">
+              <div className="Nav_Link_Mobile"> 
+                <Link onClick={closeMenuMobile} to={`/`} className="link__hover-effect">
+                  HomePage
+                </Link>
                 <Link onClick={closeMenuMobile} to={`/shop`} className="link__hover-effect">
                   Shop
                 </Link>
@@ -88,6 +111,7 @@ function Nav({cartItemCount}) {
                 <Link onClick={closeMenuMobile} to={`/`} className="link__hover-effect">
                   Contact Us
                 </Link>
+               
               </div>
             </div>
           )}
@@ -118,11 +142,14 @@ function Nav({cartItemCount}) {
         </div>
         <div className="Nav_Center">
           <input
+            onChange={(e) => setInput(e.target.value)}
+            value={Input}
+            onKeyUp={Enter}
             className={scroll ? "SearchField_fixed" : "SearchField"}
             type="text"
             placeholder="What are you looking for?"
           />
-          <button className="SearchButton">
+          <button onClick={Click} className="SearchButton">
             <img src={Search} alt="" />
           </button>
         </div>
@@ -134,6 +161,7 @@ function Nav({cartItemCount}) {
         </div>
       </div>
       <div className={scroll ? "Nav_Down_fixed active" : "Nav_Down"}>
+      
         <Link to={`/shop`} className="link__hover-effect">
           Shop
         </Link>
