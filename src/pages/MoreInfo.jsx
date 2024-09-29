@@ -29,12 +29,12 @@ function MoreInfo({incrementCartItem}) {
         {Plant && (
           <>
             <div className='Photo_Container'>
-              <img src={Plant.default_image.thumbnail} alt="" />
+              <img src={Plant.default_image.thumbnail || Plant.default_image.original_url} alt="" />
             </div>
             <div className='Description_Container'>
               <h1>{Plant.common_name}</h1>
               <div className='Photo_Container Mobile'>
-              <img src={Plant.default_image.thumbnail} alt="" />
+              <img src={Plant.default_image.thumbnail || Plant.default_image.original_url} alt="" />
             </div>
               <div className='Price'>
                 <h2 className='green1'>15.99$</h2>
@@ -50,9 +50,7 @@ function MoreInfo({incrementCartItem}) {
               <div className='Description-MoreInfo'>
                 <p className='black'>{Plant.description}</p>
               </div>
-              <div className='Button_MoreInfo'>
-                <button onClick={incrementCartItem}>Add to Cart</button>
-              </div>
+              
             </div>
           </>
         )}
